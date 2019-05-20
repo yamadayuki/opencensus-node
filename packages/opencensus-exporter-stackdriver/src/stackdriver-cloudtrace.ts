@@ -16,8 +16,9 @@
 
 import {Exporter, ExporterBuffer, Span as OCSpan, SpanContext} from '@opencensus/core';
 import {logger, Logger} from '@opencensus/core';
-import {auth, JWT, GoogleAuth} from 'google-auth-library';
+import {auth, GoogleAuth, JWT} from 'google-auth-library';
 import {google} from 'googleapis';
+
 import {getDefaultResource} from './common-utils';
 import {createAttributes, createLinks, createTimeEvents, getResourceLabels, stringToTruncatableString} from './stackdriver-cloudtrace-utils';
 import {AttributeValue, Span, SpansWithCredentials, StackdriverExporterOptions} from './types';
