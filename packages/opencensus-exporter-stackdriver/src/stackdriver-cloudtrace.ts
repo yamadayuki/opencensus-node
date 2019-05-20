@@ -16,7 +16,7 @@
 
 import {Exporter, ExporterBuffer, Span as OCSpan, SpanContext} from '@opencensus/core';
 import {logger, Logger} from '@opencensus/core';
-import {auth, JWT} from 'google-auth-library';
+import {auth, JWT, GoogleAuth} from 'google-auth-library';
 import {google} from 'googleapis';
 import {getDefaultResource} from './common-utils';
 import {createAttributes, createLinks, createTimeEvents, getResourceLabels, stringToTruncatableString} from './stackdriver-cloudtrace-utils';
@@ -32,6 +32,7 @@ export class StackdriverTraceExporter implements Exporter {
   logger: Logger;
   failBuffer: SpanContext[] = [];
   private RESOURCE_LABELS: Promise<Record<string, AttributeValue>>;
+  private readonly auth: GoogleAuth;
 
   constructor(options: StackdriverExporterOptions) {
     this.projectId = options.projectId;
@@ -39,6 +40,11 @@ export class StackdriverTraceExporter implements Exporter {
     this.exporterBuffer = new ExporterBuffer(this, options);
     this.RESOURCE_LABELS =
         getResourceLabels(getDefaultResource(this.projectId));
+    if (options.credentials) {
+      this.auth = new GoogleAuth({credentials: options.credentials});
+    } else {
+      this.auth = auth;
+    }
   }
 
   /**
@@ -152,7 +158,7 @@ export class StackdriverTraceExporter implements Exporter {
   private async authorize(stackdriverSpans: Span[]):
       Promise<SpansWithCredentials> {
     try {
-      const client = await auth.getClient(
+      const client = await this.auth.getClient(
           {scopes: ['https://www.googleapis.com/auth/cloud-platform']});
 
       return {

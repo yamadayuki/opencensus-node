@@ -15,7 +15,7 @@
  */
 
 import {logger, Logger, Measurement, Metric, MetricDescriptor as OCMetricDescriptor, MetricProducerManager, Metrics, StatsEventListener, TagKey, TagValue, version, View} from '@opencensus/core';
-import {auth, JWT} from 'google-auth-library';
+import {auth, JWT, GoogleAuth} from 'google-auth-library';
 import {google} from 'googleapis';
 import {getDefaultResource} from './common-utils';
 import {createMetricDescriptorData, createTimeSeriesList} from './stackdriver-monitoring-utils';
@@ -48,6 +48,7 @@ export class StackdriverStatsExporter implements StatsEventListener {
       new Map();
   private DEFAULT_RESOURCE: Promise<MonitoredResource>;
   logger: Logger;
+  private readonly auth: GoogleAuth;
 
   constructor(options: StackdriverExporterOptions) {
     this.period = options.period !== undefined ?
@@ -63,6 +64,11 @@ export class StackdriverStatsExporter implements StatsEventListener {
       this.onMetricUploadError = options.onMetricUploadError;
     }
     this.DEFAULT_RESOURCE = getDefaultResource(this.projectId);
+    if (options.credentials) {
+      this.auth = new GoogleAuth({credentials: options.credentials});
+    } else {
+      this.auth = auth;
+    }
   }
 
   /**
@@ -217,7 +223,7 @@ export class StackdriverStatsExporter implements StatsEventListener {
    * and authenticates the client.
    */
   private async authorize(): Promise<JWT> {
-    const client = await auth.getClient(
+    const client = await this.auth.getClient(
         {scopes: ['https://www.googleapis.com/auth/cloud-platform']});
     return client as JWT;
   }
