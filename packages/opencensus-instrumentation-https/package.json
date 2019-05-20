@@ -1,5 +1,6 @@
 {
   "name": "@yamadayuki/instrumentation-https",
+  "private": true,
   "version": "0.0.12",
   "description": "Opencensus https automatic instrumentation package.",
   "main": "build/src/index.js",

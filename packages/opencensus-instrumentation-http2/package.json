@@ -1,5 +1,6 @@
 {
   "name": "@yamadayuki/instrumentation-http2",
+  "private": true,
   "version": "0.0.12",
   "description": "Opencensus http2 automatic instrumentation package.",
   "main": "build/src/index.js",

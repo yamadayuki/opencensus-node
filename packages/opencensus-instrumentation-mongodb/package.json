@@ -1,5 +1,6 @@
 {
   "name": "@yamadayuki/instrumentation-mongodb",
+  "private": true,
   "version": "0.0.12",
   "description": "Opencensus MongoDB automatic instrumentation package.",
   "main": "build/src/index.js",

@@ -1,5 +1,6 @@
 {
   "name": "@yamadayuki/exporter-jaeger",
+  "private": true,
   "version": "0.0.12",
   "description": "OpenCensus Exporter Jeager allows user to send collected traces to Jeager",
   "main": "build/src/index.js",

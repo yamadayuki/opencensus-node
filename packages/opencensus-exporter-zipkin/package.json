@@ -1,5 +1,6 @@
 {
   "name": "@yamadayuki/exporter-zipkin",
+  "private": true,
   "version": "0.0.12",
   "description": "OpenCensus Zipkin Exporter allows the user to send collected traces with OpenCensus Node.js to Zipkin.",
   "main": "build/src/index.js",

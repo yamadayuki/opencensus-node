@@ -1,5 +1,6 @@
 {
   "name": "@yamadayuki/propagation-b3",
+  "private": true,
   "version": "0.0.12",
   "description": "Opencensus propagation package for B3 format.",
   "main": "build/src/index.js",

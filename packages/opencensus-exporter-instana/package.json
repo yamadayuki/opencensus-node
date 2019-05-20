@@ -1,5 +1,6 @@
 {
   "name": "@yamadayuki/exporter-instana",
+  "private": true,
   "version": "0.0.12",
   "description": "OpenCensus Instana Exporter allows the user to send collected traces with OpenCensus Node.js to Instana.",
   "main": "build/src/index.js",
