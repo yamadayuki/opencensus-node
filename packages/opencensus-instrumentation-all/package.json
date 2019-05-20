@@ -1,7 +1,7 @@
 {
   "name": "@yamadayuki/instrumentation-all",
   "private": true,
-  "version": "0.0.12",
+  "version": "0.0.12-alpha.0",
   "description": "This package has dependencies to all default instrumentation packages.",
   "main": "src/index.js",
   "types": "src/index.d.ts",

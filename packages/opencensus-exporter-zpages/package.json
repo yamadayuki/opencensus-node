@@ -1,7 +1,7 @@
 {
   "name": "@yamadayuki/exporter-zpages",
   "private": true,
-  "version": "0.0.12",
+  "version": "0.0.12-alpha.0",
   "description": "A collection of HTML pages to display stats and trace data and allow library configuration control",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",

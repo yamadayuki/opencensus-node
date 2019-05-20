@@ -1,7 +1,7 @@
 {
   "name": "@yamadayuki/instrumentation-redis",
   "private": true,
-  "version": "0.0.12",
+  "version": "0.0.12-alpha.0",
   "description": "Opencensus Redis automatic instrumentation package.",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
