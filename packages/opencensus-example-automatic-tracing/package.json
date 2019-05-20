@@ -1,5 +1,5 @@
 {
-  "name": "@opencensus/example-automatic-tracing",
+  "name": "@yamadayuki/example-automatic-tracing",
   "description": "These example show hot to trace a simple HTTP server and export the trace state.",
   "version": "0.0.12",
   "private": true,

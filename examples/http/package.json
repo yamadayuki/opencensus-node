@@ -2,7 +2,7 @@
   "name": "http-example",
   "version": "0.0.1",
   "description": "Example of HTTP integration with OpenCensus",
-  "repository": "census-instrumentation/opencensus-node",
+  "repository": "yamadayuki/opencensus-node",
   "keywords": [
     "opencensus",
     "http",

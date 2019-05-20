@@ -1,10 +1,10 @@
 {
-  "name": "@opencensus/opencensus-base",
+  "name": "@yamadayuki/opencensus-base",
   "version": "0.0.1",
   "description": "OpenCensus is a toolkit for collecting application performance and behavior data.",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
-  "repository": "census-instrumentation/opencensus-node",
+  "repository": "yamadayuki/opencensus-node",
   "scripts": {
     "fix": "lerna run fix",
     "postinstall": "npm run bootstrap",
@@ -24,6 +24,9 @@
     "stats"
   ],
   "author": "Google Inc.",
+  "contributors": [
+    "Yuki Yamada <yamadayuuki0818@gmail.com>"
+  ],
   "license": "Apache-2.0",
   "engines": {
     "node": ">=8"
