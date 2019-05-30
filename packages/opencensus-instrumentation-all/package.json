@@ -5,7 +5,7 @@
   "description": "This package has dependencies to all default instrumentation packages.",
   "main": "src/index.js",
   "types": "src/index.d.ts",
-  "repository": "census-instrumentation/opencensus-node",
+  "repository": "yamadayuki/opencensus-node",
   "scripts": {
     "test": "echo Ok",
     "clean": "echo Ok",

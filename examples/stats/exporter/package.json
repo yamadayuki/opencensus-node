@@ -2,7 +2,7 @@
   "name": "@opencensus/examples",
   "version": "0.0.8",
   "description": "OpenCensus is a toolkit for collecting application performance and behavior data.",
-  "repository": "census-instrumentation/opencensus-node",
+  "repository": "yamadayuki/opencensus-node",
   "scripts": {
     "lint": "semistandard *.js",
     "fix": "semistandard --fix"
