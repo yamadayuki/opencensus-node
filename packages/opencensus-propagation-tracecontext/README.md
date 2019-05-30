@@ -1,4 +1,5 @@
 # OpenCensus Trace Context Format Propagation for Node.js
+
 [![Gitter chat][gitter-image]][gitter-url]
 
 OpenCensus Trace Context Format Propagation sends a span context on the wire in an HTTP request, allowing other services to create spans with the right context.
@@ -8,8 +9,9 @@ The library is in alpha stage and the API is subject to change.
 ## Installation
 
 Install OpenCensus TraceContex Propagation with:
+
 ```bash
-npm install @opencensus/propagation-tracecontext
+npm install @yamadayuki/propagation-tracecontext
 ```
 
 ## Usage
@@ -17,26 +19,27 @@ npm install @opencensus/propagation-tracecontext
 To propagate span context arround services with Trace Context Propagation, pass an instance of Trace Context Propagation to your tracing instance. For Javascript:
 
 ```javascript
-const tracing = require('@opencensus/nodejs');
-const propagation = require('@opencensus/propagation-tracecontext');
+const tracing = require("@opencensus/nodejs");
+const propagation = require("@yamadayuki/propagation-tracecontext");
 
 const traceContext = new propagation.TraceContextFormat();
 
-tracing.start({propagation: traceContext});
+tracing.start({ propagation: traceContext });
 ```
 
 Similarly for Typescript:
 
 ```typescript
-import * as tracing from '@opencensus/nodejs';
-import { TraceContextFormat } from '@opencensus/propagation-tracecontext';
+import * as tracing from "@opencensus/nodejs";
+import { TraceContextFormat } from "@yamadayuki/propagation-tracecontext";
 
 const traceContext = new TraceContextFormat();
 
-tracing.start({propagation: traceContext});
+tracing.start({ propagation: traceContext });
 ```
 
 ## Useful links
+
 - To know more about Trace Context Format propagation, visit: <https://w3c.github.io/distributed-tracing/>
 - For more information on OpenCensus, visit: <https://opencensus.io/>
 - To checkout the OpenCensus for Node.js, visit: <https://github.com/census-instrumentation/opencensus-node>

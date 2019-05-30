@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-const tracing = require('@opencensus/nodejs');
-const { ZipkinTraceExporter } = require('@opencensus/exporter-zipkin');
-const { TraceContextFormat } = require('@opencensus/propagation-tracecontext');
+const tracing = require("@opencensus/nodejs");
+const { ZipkinTraceExporter } = require("@opencensus/exporter-zipkin");
+const { TraceContextFormat } = require("@yamadayuki/propagation-tracecontext");
 
 /**
  * The trace instance needs to be initialized first, if you want to enable
@@ -25,10 +25,10 @@ const { TraceContextFormat } = require('@opencensus/propagation-tracecontext');
  */
 const tracer = setupTracerAndExporters();
 
-const http = require('http');
+const http = require("http");
 
 /** Starts a HTTP server that receives requests on sample server port. */
-function startServer (port) {
+function startServer(port) {
   // Creates a server
   const server = http.createServer(handleRequest);
   // Starts the server
@@ -41,17 +41,17 @@ function startServer (port) {
 }
 
 /** A function which handles requests and send response. */
-function handleRequest (request, response) {
-  const span = tracer.startChildSpan({ name: 'octutorials.handleRequest' });
+function handleRequest(request, response) {
+  const span = tracer.startChildSpan({ name: "octutorials.handleRequest" });
   try {
     let body = [];
-    request.on('error', err => console.log(err));
-    request.on('data', chunk => body.push(chunk));
-    request.on('end', () => {
+    request.on("error", err => console.log(err));
+    request.on("data", chunk => body.push(chunk));
+    request.on("end", () => {
       // deliberately sleeping to mock some action.
       setTimeout(() => {
         span.end();
-        response.end('Hello World!');
+        response.end("Hello World!");
       }, 5000);
     });
   } catch (err) {
@@ -60,10 +60,10 @@ function handleRequest (request, response) {
   }
 }
 
-function setupTracerAndExporters () {
+function setupTracerAndExporters() {
   const zipkinOptions = {
-    url: 'http://localhost:9411/api/v2/spans',
-    serviceName: 'opencensus_tutorial'
+    url: "http://localhost:9411/api/v2/spans",
+    serviceName: "opencensus_tutorial",
   };
 
   // Creates Zipkin exporter
@@ -74,7 +74,7 @@ function setupTracerAndExporters () {
     exporter,
     samplingRate: 1, // For demo purposes, always sample
     propagation: new TraceContextFormat(),
-    logLevel: 1 // show errors, if any
+    logLevel: 1, // show errors, if any
   }).tracer;
 
   return tracer;
