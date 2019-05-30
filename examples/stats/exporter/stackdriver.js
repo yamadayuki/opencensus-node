@@ -19,12 +19,11 @@
  * OpenCensus to Stackdriver.
  */
 
-const { globalStats, MeasureUnit, AggregationType, TagMap } = require('@opencensus/core');
-const { StackdriverStatsExporter } =
-require('@opencensus/exporter-stackdriver');
+const { globalStats, MeasureUnit, AggregationType, TagMap } = require("@opencensus/core");
+const { StackdriverStatsExporter } = require("@yamadayuki/exporter-stackdriver");
 
-const fs = require('fs');
-const readline = require('readline');
+const fs = require("fs");
+const readline = require("readline");
 
 // [START setup_exporter]
 // Enable OpenCensus exporters to export metrics to Stackdriver Monitoring.
@@ -38,7 +37,7 @@ const projectId = process.env.GOOGLE_PROJECT_ID;
 // GOOGLE_APPLICATION_CREDENTIALS are expected by a dependency of this code
 // Not this code itself. Checking for existence here but not retaining (as not needed)
 if (!projectId || !process.env.GOOGLE_APPLICATION_CREDENTIALS) {
-  throw Error('Unable to proceed without a Project ID');
+  throw Error("Unable to proceed without a Project ID");
 }
 const exporter = new StackdriverStatsExporter({ projectId: projectId });
 
@@ -48,35 +47,35 @@ globalStats.registerExporter(exporter);
 
 // The latency in milliseconds
 const mLatencyMs = globalStats.createMeasureDouble(
-  'repl/latency',
+  "repl/latency",
   MeasureUnit.MS,
-  'The latency in milliseconds per REPL loop'
+  "The latency in milliseconds per REPL loop"
 );
 
 // Counts/groups the lengths of lines read in.
 const mLineLengths = globalStats.createMeasureInt64(
-  'repl/line_lengths',
+  "repl/line_lengths",
   MeasureUnit.BYTE,
-  'The distribution of line lengths'
+  "The distribution of line lengths"
 );
 
 // Create a stream to read our file
-const stream = fs.createReadStream('./test.txt');
+const stream = fs.createReadStream("./test.txt");
 
 // Create an interface to read and process our file line by line
 const lineReader = readline.createInterface({ input: stream });
 
-const methodKey = { name: 'method' };
-const statusKey = { name: 'status' };
+const methodKey = { name: "method" };
+const statusKey = { name: "status" };
 const tagKeys = [methodKey, statusKey];
 
 // Create & Register the view.
 const latencyView = globalStats.createView(
-  'demo/latency',
+  "demo/latency",
   mLatencyMs,
   AggregationType.DISTRIBUTION,
   tagKeys,
-  'The distribution of the repl latencies',
+  "The distribution of the repl latencies",
   // Latency in buckets:
   // [>=25ms, >=50ms, >=75ms, >=100ms, >=200ms, >=400ms, >=600ms, >=800ms, >=1s, >=2s, >=4s, >=6s]
   [25, 50, 75, 100, 200, 400, 600, 800, 1000, 2000, 4000, 6000]
@@ -85,21 +84,21 @@ globalStats.registerView(latencyView);
 
 // Create & Register the view.
 const lineCountView = globalStats.createView(
-  'demo/lines_in',
+  "demo/lines_in",
   mLineLengths,
   AggregationType.COUNT,
   tagKeys,
-  'The number of lines from standard input'
+  "The number of lines from standard input"
 );
 globalStats.registerView(lineCountView);
 
 // Create & Register the view.
 const lineLengthView = globalStats.createView(
-  'demo/line_lengths',
+  "demo/line_lengths",
   mLineLengths,
   AggregationType.DISTRIBUTION,
   tagKeys,
-  'Groups the lengths of keys in buckets',
+  "Groups the lengths of keys in buckets",
   // Bucket Boudaries:
   // [>=5B, >=10B, >=15B, >=20B, >=40B, >=60B, >=80, >=100B, >=200B, >=400, >=600, >=800, >=1000]
   [5, 10, 15, 20, 40, 60, 80, 100, 200, 400, 600, 800, 1000]
@@ -111,7 +110,7 @@ let [_, startNanoseconds] = process.hrtime();
 let endNanoseconds;
 
 // REPL is the read, evaluate, print and loop
-lineReader.on('line', function (line) {
+lineReader.on("line", function(line) {
   // Read
   try {
     const processedLine = processLine(line); // Evaluate
@@ -121,28 +120,43 @@ lineReader.on('line', function (line) {
     [_, endNanoseconds] = process.hrtime();
 
     const tags = new TagMap();
-    tags.set(methodKey, { value: 'REPL' });
-    tags.set(statusKey, { value: 'OK' });
+    tags.set(methodKey, { value: "REPL" });
+    tags.set(statusKey, { value: "OK" });
 
-    globalStats.record([{
-      measure: mLineLengths,
-      value: processedLine.length
-    }], tags);
+    globalStats.record(
+      [
+        {
+          measure: mLineLengths,
+          value: processedLine.length,
+        },
+      ],
+      tags
+    );
 
-    globalStats.record([{
-      measure: mLatencyMs,
-      value: sinceInMilliseconds(endNanoseconds, startNanoseconds)
-    }], tags);
+    globalStats.record(
+      [
+        {
+          measure: mLatencyMs,
+          value: sinceInMilliseconds(endNanoseconds, startNanoseconds),
+        },
+      ],
+      tags
+    );
   } catch (err) {
     console.log(err);
 
     const errTags = new TagMap();
-    errTags.set(methodKey, { value: 'repl' });
-    errTags.set(statusKey, { value: 'ERROR' });
-    globalStats.record([{
-      measure: mLatencyMs,
-      value: sinceInMilliseconds(endNanoseconds, startNanoseconds)
-    }], errTags);
+    errTags.set(methodKey, { value: "repl" });
+    errTags.set(statusKey, { value: "ERROR" });
+    globalStats.record(
+      [
+        {
+          measure: mLatencyMs,
+          value: sinceInMilliseconds(endNanoseconds, startNanoseconds),
+        },
+      ],
+      errTags
+    );
   }
 
   // Restarts the start time for the REPL
@@ -155,15 +169,15 @@ lineReader.on('line', function (line) {
  * metrics that must be collected, or some risk being lost if they are recorded
  * after the last export.
  */
-setTimeout(function () {
-  console.log('Completed.');
+setTimeout(function() {
+  console.log("Completed.");
 }, 60 * 1000);
 
 /**
  * Takes a line and process it.
  * @param line The line to process
  */
-function processLine (line) {
+function processLine(line) {
   // Currently, it just capitalizes it.
   return line.toUpperCase();
 }
@@ -173,6 +187,6 @@ function processLine (line) {
  * @param endNanoseconds The end time of REPL.
  * @param startNanoseconds The start time of REPL.
  */
-function sinceInMilliseconds (endNanoseconds, startNanoseconds) {
+function sinceInMilliseconds(endNanoseconds, startNanoseconds) {
   return (endNanoseconds - startNanoseconds) / 1e6;
 }

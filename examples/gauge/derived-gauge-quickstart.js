@@ -19,11 +19,11 @@
  * self sufficient once created
  */
 
-const { Metrics, MeasureUnit } = require('@opencensus/core');
+const { Metrics, MeasureUnit } = require("@opencensus/core");
 
 // [UNCOMMENT THIS BLOCK to visualize the data =======================]
 // // Enable OpenCensus exporters to export gauges to Stackdriver Monitoring.
-// const { StackdriverStatsExporter } = require('@opencensus/exporter-stackdriver');
+// const { StackdriverStatsExporter } = require('@yamadayuki/exporter-stackdriver');
 // const exporter = new StackdriverStatsExporter({ projectId: 'projectId' });
 // const { globalStats } = require('@opencensus/core');
 // globalStats.registerExporter(exporter);
@@ -31,25 +31,31 @@ const { Metrics, MeasureUnit } = require('@opencensus/core');
 
 // To instrument a queue's depth.
 class QueueManager {
-  constructor () { this.depth = 0; }
-  getPendingJobs () { return this.depth; }
-  addJob () { this.depth++; }
+  constructor() {
+    this.depth = 0;
+  }
+  getPendingJobs() {
+    return this.depth;
+  }
+  addJob() {
+    this.depth++;
+  }
 }
 
 // a registry is a collection of metric objects.
 const metricRegistry = Metrics.getMetricRegistry();
 
 // application labels - applied to each metric / gauge.
-const labelKeys = [{ key: 'VM', description: 'VM Description' }];
-const labelValues = [{ value: 'localhost' }];
+const labelKeys = [{ key: "VM", description: "VM Description" }];
+const labelValues = [{ value: "localhost" }];
 
 // a new gauge instance - builds a new Int64 gauge to be added to the registry.
 const metricOptions = {
-  description: 'Number of active handles',
+  description: "Number of active handles",
   unit: MeasureUnit.UNIT,
-  labelKeys: labelKeys
+  labelKeys: labelKeys,
 };
-const gauge = metricRegistry.addDerivedInt64Gauge('active_handles_total', metricOptions);
+const gauge = metricRegistry.addDerivedInt64Gauge("active_handles_total", metricOptions);
 
 const queue = new QueueManager();
 queue.addJob();

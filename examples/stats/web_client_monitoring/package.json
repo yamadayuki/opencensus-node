@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@opencensus/core": "0.0.13",
-    "@opencensus/exporter-stackdriver": "0.0.13",
+    "@yamadayuki/exporter-stackdriver": "0.0.13",
     "express": "^4.16.3"
   }
 }

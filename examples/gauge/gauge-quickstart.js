@@ -21,11 +21,11 @@
  * gauges values can be negative.
  */
 
-const { Metrics, MeasureUnit } = require('@opencensus/core');
+const { Metrics, MeasureUnit } = require("@opencensus/core");
 
 // [UNCOMMENT THIS BLOCK to visualize the data =======================]
 // // Enable OpenCensus exporters to export gauges to Stackdriver Monitoring.
-// const { StackdriverStatsExporter } = require('@opencensus/exporter-stackdriver');
+// const { StackdriverStatsExporter } = require('@yamadayuki/exporter-stackdriver');
 // const exporter = new StackdriverStatsExporter({ projectId: 'projectId' });
 // const { globalStats } = require('@opencensus/core');
 // globalStats.registerExporter(exporter);
@@ -35,16 +35,16 @@ const { Metrics, MeasureUnit } = require('@opencensus/core');
 const metricRegistry = Metrics.getMetricRegistry();
 
 // application labels - applied to each metric / gauge.
-const labelKeys = [{ key: 'VM', description: 'VM Description' }];
-const labelValues = [{ value: 'localhost' }];
+const labelKeys = [{ key: "VM", description: "VM Description" }];
+const labelValues = [{ value: "localhost" }];
 
 // a new gauge instance - builds a new Int64 gauge to be added to the registry.
 const metricOptions = {
-  description: 'The number of seconds the current Node.js process has been running',
+  description: "The number of seconds the current Node.js process has been running",
   unit: MeasureUnit.SEC,
-  labelKeys: labelKeys
+  labelKeys: labelKeys,
 };
-const gauge = metricRegistry.addDoubleGauge('process_uptime', metricOptions);
+const gauge = metricRegistry.addDoubleGauge("process_uptime", metricOptions);
 
 // It is recommended to keep a reference of a point for manual operations.
 const point = gauge.getOrCreateTimeSeries(labelValues);

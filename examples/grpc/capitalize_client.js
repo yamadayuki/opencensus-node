@@ -14,34 +14,32 @@
  * limitations under the License.
  */
 
-const path = require('path');
-const grpc = require('grpc');
-const protoLoader = require('@grpc/proto-loader');
-const tracing = require('@opencensus/nodejs');
-const { plugin } = require('@opencensus/instrumentation-grpc');
-const { StackdriverTraceExporter } =
-    require('@opencensus/exporter-stackdriver');
+const path = require("path");
+const grpc = require("grpc");
+const protoLoader = require("@grpc/proto-loader");
+const tracing = require("@opencensus/nodejs");
+const { plugin } = require("@opencensus/instrumentation-grpc");
+const { StackdriverTraceExporter } = require("@yamadayuki/exporter-stackdriver");
 
 const tracer = setupTracerAndExporters();
 
-const PROTO_PATH = path.join(__dirname, 'protos/defs.proto');
+const PROTO_PATH = path.join(__dirname, "protos/defs.proto");
 const PROTO_OPTIONS = { keepCase: true, enums: String, defaults: true, oneofs: true };
 const definition = protoLoader.loadSync(PROTO_PATH, PROTO_OPTIONS);
 const rpcProto = grpc.loadPackageDefinition(definition).rpc;
 
-function main () {
-  const client = new rpcProto.Fetch('localhost:50051',
-    grpc.credentials.createInsecure());
-  const data = process.argv[2] || 'opencensus';
-  console.log('> ', data);
+function main() {
+  const client = new rpcProto.Fetch("localhost:50051", grpc.credentials.createInsecure());
+  const data = process.argv[2] || "opencensus";
+  console.log("> ", data);
 
-  tracer.startRootSpan({ name: 'octutorialsClient.capitalize' }, rootSpan => {
-    client.capitalize({ data: Buffer.from(data) }, function (err, response) {
+  tracer.startRootSpan({ name: "octutorialsClient.capitalize" }, rootSpan => {
+    client.capitalize({ data: Buffer.from(data) }, function(err, response) {
       if (err) {
-        console.log('could not get grpc response');
+        console.log("could not get grpc response");
         return;
       }
-      console.log('< ', response.data.toString('utf8'));
+      console.log("< ", response.data.toString("utf8"));
       rootSpan.end();
     });
   });
@@ -53,11 +51,11 @@ function main () {
    * recorded after the last export.
    */
   setTimeout(() => {
-    console.log('done.');
+    console.log("done.");
   }, 60000);
 }
 
-function setupTracerAndExporters () {
+function setupTracerAndExporters() {
   // Enable OpenCensus exporters to export traces to Stackdriver CloudTrace.
   // Exporters use Application Default Credentials (ADCs) to authenticate.
   // See https://developers.google.com/identity/protocols/application-default-credentials
@@ -69,7 +67,7 @@ function setupTracerAndExporters () {
   // GOOGLE_APPLICATION_CREDENTIALS are expected by a dependency of this code
   // Not this code itself. Checking for existence here but not retaining (as not needed)
   if (!projectId || !process.env.GOOGLE_APPLICATION_CREDENTIALS) {
-    throw Error('Unable to proceed without a Project ID');
+    throw Error("Unable to proceed without a Project ID");
   }
 
   // Creates Stackdriver exporter
@@ -80,15 +78,15 @@ function setupTracerAndExporters () {
 
   // Starts tracing and set sampling rate
   const tracer = tracing.start({
-    samplingRate: 1 // For demo purposes, always sample
+    samplingRate: 1, // For demo purposes, always sample
   }).tracer;
 
   // Defines basedir and version
-  const basedir = path.dirname(require.resolve('grpc'));
-  const version = require(path.join(basedir, 'package.json')).version;
+  const basedir = path.dirname(require.resolve("grpc"));
+  const version = require(path.join(basedir, "package.json")).version;
 
   // Enables GRPC plugin: Method that enables the instrumentation patch.
-  plugin.enable(grpc, tracer, version, /** plugin options */{}, basedir);
+  plugin.enable(grpc, tracer, version, /** plugin options */ {}, basedir);
 
   return tracer;
 }

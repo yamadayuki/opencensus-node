@@ -6,7 +6,7 @@
   "main": "zipkin.js",
   "dependencies": {
     "@opencensus/exporter-instana": "^0.0.13",
-    "@opencensus/exporter-stackdriver": "^0.0.13",
+    "@yamadayuki/exporter-stackdriver": "^0.0.13",
     "@opencensus/exporter-zipkin": "^0.0.13",
     "@opencensus/nodejs": "^0.0.13"
   }
