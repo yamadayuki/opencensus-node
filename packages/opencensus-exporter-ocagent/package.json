@@ -1,6 +1,7 @@
 {
   "name": "@opencensus/exporter-ocagent",
   "version": "0.0.13",
+  "private": true,
   "description": "OpenCensus Agent Exporter allows user to send collected trace to the OpenCensus Agent",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",

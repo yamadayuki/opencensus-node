@@ -1,6 +1,7 @@
 {
   "name": "@opencensus/propagation-tracecontext",
   "version": "0.0.13",
+  "private": true,
   "description": "OpenCensus propagation package for TraceContext format.",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",

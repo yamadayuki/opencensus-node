@@ -1,6 +1,7 @@
 {
   "name": "@opencensus/propagation-binaryformat",
   "version": "0.0.13",
+  "private": true,
   "description": "Opencensus propagation package for binary format.",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",

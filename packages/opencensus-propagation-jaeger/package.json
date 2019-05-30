@@ -1,6 +1,7 @@
 {
   "name": "@opencensus/propagation-jaeger",
   "version": "0.0.13",
+  "private": true,
   "description": "Opencensus propagation package for jaeger's format.",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",

@@ -1,6 +1,7 @@
 {
   "name": "@opencensus/exporter-zpages",
   "version": "0.0.13",
+  "private": true,
   "description": "A collection of HTML pages to display stats and trace data and allow library configuration control",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",

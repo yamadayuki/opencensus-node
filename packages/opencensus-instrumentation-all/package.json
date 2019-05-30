@@ -1,6 +1,7 @@
 {
   "name": "@opencensus/instrumentation-all",
   "version": "0.0.13",
+  "private": true,
   "description": "This package has dependencies to all default instrumentation packages.",
   "main": "src/index.js",
   "types": "src/index.d.ts",
