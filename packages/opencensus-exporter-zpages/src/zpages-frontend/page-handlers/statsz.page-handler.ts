@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {AggregationData, AggregationType, TagKey, TagValue, View} from '@opencensus/core';
+import {AggregationData, AggregationType, TagKey, TagValue, View} from '@yamadayuki/core';
 import {StatsParams} from '../../zpages';
 import {templatesDir} from './templates-dir';
 const ejs = require('ejs');

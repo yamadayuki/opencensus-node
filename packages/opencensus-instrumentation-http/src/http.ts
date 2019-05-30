@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {BasePlugin, CanonicalCode, Func, HeaderGetter, HeaderSetter, MessageEventType, Span, SpanKind, TagMap, TagTtl, TraceOptions} from '@opencensus/core';
+import {BasePlugin, CanonicalCode, Func, HeaderGetter, HeaderSetter, MessageEventType, Span, SpanKind, TagMap, TagTtl, TraceOptions} from '@yamadayuki/core';
 import {ClientRequest, ClientResponse, IncomingMessage, request, RequestOptions, ServerResponse} from 'http';
 import * as semver from 'semver';
 import * as shimmer from 'shimmer';

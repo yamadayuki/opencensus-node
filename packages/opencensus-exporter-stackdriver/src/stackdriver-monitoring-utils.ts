@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {BucketOptions, DistributionBucket, DistributionValue, Exemplar as OCExemplar, LabelKey, LabelValue, Metric, MetricDescriptor as OCMetricDescriptor, MetricDescriptorType, TimeSeriesPoint, Timestamp} from '@opencensus/core';
+import {BucketOptions, DistributionBucket, DistributionValue, Exemplar as OCExemplar, LabelKey, LabelValue, Metric, MetricDescriptor as OCMetricDescriptor, MetricDescriptorType, TimeSeriesPoint, Timestamp} from '@yamadayuki/core';
 import * as os from 'os';
 import * as path from 'path';
 import {Any, Distribution, Exemplar, LabelDescriptor, MetricDescriptor, MetricKind, MonitoredResource, Point, TimeSeries, ValueType} from './types';

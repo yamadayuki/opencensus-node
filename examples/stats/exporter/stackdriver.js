@@ -19,7 +19,7 @@
  * OpenCensus to Stackdriver.
  */
 
-const { globalStats, MeasureUnit, AggregationType, TagMap } = require("@opencensus/core");
+const { globalStats, MeasureUnit, AggregationType, TagMap } = require("@yamadayuki/core");
 const { StackdriverStatsExporter } = require("@yamadayuki/exporter-stackdriver");
 
 const fs = require("fs");

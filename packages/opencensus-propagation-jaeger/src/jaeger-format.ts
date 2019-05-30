@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {HeaderGetter, HeaderSetter, Propagation, SpanContext} from '@opencensus/core';
+import {HeaderGetter, HeaderSetter, Propagation, SpanContext} from '@yamadayuki/core';
 import * as crypto from 'crypto';
 import * as uuid from 'uuid';
 import {isValidSpanId, isValidTraceId} from './validators';

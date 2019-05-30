@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {CoreResource, Resource} from '@opencensus/core';
+import {CoreResource, Resource} from '@yamadayuki/core';
 import {getAwsEC2Resource, getComputerEngineResource, getKubernetesEngineResource, getResourceType, ResourceType} from './resource-utils';
 
 /**

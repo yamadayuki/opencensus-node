@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {CoreTracer, LinkType, logger} from '@opencensus/core';
+import {CoreTracer, LinkType, logger} from '@yamadayuki/core';
 import * as assert from 'assert';
 
 import {JaegerTraceExporter, JaegerTraceExporterOptions,} from '../src/';

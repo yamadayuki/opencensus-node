@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import {BasePlugin, CanonicalCode, deserializeBinary, MessageEventType, PluginInternalFiles, serializeBinary, Span, SpanContext, SpanKind, TagMap, TagTtl, TraceOptions} from '@opencensus/core';
 import {deserializeSpanContext, serializeSpanContext} from '@opencensus/propagation-binaryformat';
+import {BasePlugin, CanonicalCode, deserializeBinary, MessageEventType, PluginInternalFiles, serializeBinary, Span, SpanContext, SpanKind, TagMap, TagTtl, TraceOptions} from '@yamadayuki/core';
 import {EventEmitter} from 'events';
 import * as grpcTypes from 'grpc';
 import * as lodash from 'lodash';

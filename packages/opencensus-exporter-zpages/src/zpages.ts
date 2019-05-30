@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import {AggregationData, Exporter, ExporterConfig, Measure, Measurement, Span, StatsEventListener, TagKey, TagValue, View} from '@opencensus/core';
-import {logger, Logger} from '@opencensus/core';
+import {AggregationData, Exporter, ExporterConfig, Measure, Measurement, Span, StatsEventListener, TagKey, TagValue, View} from '@yamadayuki/core';
+import {logger, Logger} from '@yamadayuki/core';
 import * as express from 'express';
 import * as http from 'http';
 import {createRoutes} from './zpages-frontend/routes';

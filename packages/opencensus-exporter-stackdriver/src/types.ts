@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {Bucket, ExporterConfig} from '@opencensus/core';
+import {Bucket, ExporterConfig} from '@yamadayuki/core';
 import {JWT, JWTInput} from 'google-auth-library';
 
 export type Span = {

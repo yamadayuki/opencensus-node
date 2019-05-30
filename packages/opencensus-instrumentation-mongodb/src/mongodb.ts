@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {BasePlugin, Func, Span, SpanKind} from '@opencensus/core';
+import {BasePlugin, Func, Span, SpanKind} from '@yamadayuki/core';
 import * as mongodb from 'mongodb';
 import * as shimmer from 'shimmer';
 

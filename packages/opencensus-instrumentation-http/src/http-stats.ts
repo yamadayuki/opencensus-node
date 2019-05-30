@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {AggregationType, globalStats, Measure, MeasureUnit, Stats, View} from '@opencensus/core';
+import {AggregationType, globalStats, Measure, MeasureUnit, Stats, View} from '@yamadayuki/core';
 
 /**
  * {@link Measure} for the client-side total bytes sent in request body (not

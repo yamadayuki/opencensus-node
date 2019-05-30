@@ -15,7 +15,7 @@
  */
 
 
-import {CoreTracer, logger, MessageEventType, Span, SpanEventListener} from '@opencensus/core';
+import {CoreTracer, logger, MessageEventType, Span, SpanEventListener} from '@yamadayuki/core';
 import * as assert from 'assert';
 import * as http2 from 'http2';
 import * as semver from 'semver';

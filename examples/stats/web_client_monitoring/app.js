@@ -25,7 +25,7 @@ const assert = require("assert");
 const process = require("process");
 const bodyParser = require("body-parser");
 // [START web_client_monitoring_imports]
-const { globalStats, MeasureUnit, AggregationType, TagMap } = require("@opencensus/core");
+const { globalStats, MeasureUnit, AggregationType, TagMap } = require("@yamadayuki/core");
 const { StackdriverStatsExporter } = require("@yamadayuki/exporter-stackdriver");
 // [END web_client_monitoring_imports]
 

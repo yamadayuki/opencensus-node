@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {Link, LinkType, Span} from '@opencensus/core';
+import {Link, LinkType, Span} from '@yamadayuki/core';
 
 // tslint:disable-next-line:variable-name
 export const UDPSender =

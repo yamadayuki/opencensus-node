@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {AggregationType, DistributionData, ExporterConfig, logger, Logger, Measurement, StatsEventListener, TagKey, TagValue, View} from '@opencensus/core';
+import {AggregationType, DistributionData, ExporterConfig, logger, Logger, Measurement, StatsEventListener, TagKey, TagValue, View} from '@yamadayuki/core';
 import * as express from 'express';
 import * as http from 'http';
 import {Counter, Gauge, Histogram, labelValues, Metric, Registry} from 'prom-client';

@@ -122,7 +122,7 @@ const span = tracer.startChildSpan({
 
 ##### Old code
 ```js
-const { Stats } = require("@opencensus/core");
+const { Stats } = require("@yamadayuki/core");
 const stats = new Stats();
 
 // Counts/groups the lengths of lines read in.
@@ -156,7 +156,7 @@ stats.record({
 ##### New code
 ```js
 // Gets the global stats instance
-const { globalStats } = require("@opencensus/core");
+const { globalStats } = require("@yamadayuki/core");
 
 // Counts/groups the lengths of lines read in.
 const mLineLengths = globalStats.createMeasureInt64(

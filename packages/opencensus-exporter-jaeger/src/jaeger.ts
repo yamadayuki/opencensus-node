@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import {Exporter, ExporterConfig, Span} from '@opencensus/core';
-import {logger, Logger} from '@opencensus/core';
+import {Exporter, ExporterConfig, Span} from '@yamadayuki/core';
+import {logger, Logger} from '@yamadayuki/core';
 import * as os from 'os';
 import {spanToThrift, Tag, TagValue, ThriftProcess, ThriftUtils, UDPSender, Utils} from './jaeger-driver';
 

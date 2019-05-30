@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {Stats} from '@opencensus/core';
+import {Stats} from '@yamadayuki/core';
 import {GRPC_BASIC_CLIENT_VIEWS} from './client-stats';
 import {GRPC_BASIC_SERVER_VIEWS} from './server-stats';
 

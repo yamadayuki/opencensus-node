@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {BasePlugin, CanonicalCode, Span, SpanKind} from '@opencensus/core';
+import {BasePlugin, CanonicalCode, Span, SpanKind} from '@yamadayuki/core';
 import * as ioredis from 'ioredis';
 import * as semver from 'semver';
 import * as shimmer from 'shimmer';

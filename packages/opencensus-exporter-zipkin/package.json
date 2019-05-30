@@ -63,6 +63,6 @@
     "typescript": "~3.2.0"
   },
   "dependencies": {
-    "@opencensus/core": "^0.0.13"
+    "@yamadayuki/core": "^0.0.13"
   }
 }

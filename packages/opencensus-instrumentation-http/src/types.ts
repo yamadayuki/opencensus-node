@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {CustomAttributeFunction, Span} from '@opencensus/core';
+import {CustomAttributeFunction, Span} from '@yamadayuki/core';
 import {ClientRequest, IncomingMessage, ServerResponse} from 'http';
 
 export type IgnoreMatcher<T> =

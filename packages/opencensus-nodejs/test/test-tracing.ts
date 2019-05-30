@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import * as core from '@opencensus/core';
 import {DEFAULT_INSTRUMENTATION_MODULES} from '@opencensus/instrumentation-all';
+import * as core from '@yamadayuki/core';
 import * as assert from 'assert';
+
 import {Tracing} from '../src/trace/tracing';
 
 describe('Tracing', () => {

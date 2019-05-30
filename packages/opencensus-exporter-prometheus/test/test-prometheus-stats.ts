@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {AggregationType, globalStats, Measure, MeasureUnit, TagMap} from '@opencensus/core';
+import {AggregationType, globalStats, Measure, MeasureUnit, TagMap} from '@yamadayuki/core';
 import * as assert from 'assert';
 import * as http from 'http';
 import {PrometheusStatsExporter} from '../src/';

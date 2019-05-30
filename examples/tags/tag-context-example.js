@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const {globalStats, MeasureUnit, TagMap} = require('@opencensus/core');
+const {globalStats, MeasureUnit, TagMap} = require('@yamadayuki/core');
 
 const K1 = { name: 'k1' };
 const K2 = { name: 'k2' };

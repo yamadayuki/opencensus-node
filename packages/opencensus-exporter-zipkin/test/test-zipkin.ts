@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {CanonicalCode, CoreTracer, MessageEventType, Span, SpanKind, TracerConfig} from '@opencensus/core';
+import {CanonicalCode, CoreTracer, MessageEventType, Span, SpanKind, TracerConfig} from '@yamadayuki/core';
 import * as assert from 'assert';
 import * as nock from 'nock';
 

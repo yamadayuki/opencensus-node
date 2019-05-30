@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {CoreTracerBase, logger} from '@opencensus/core';
+import {CoreTracerBase, logger} from '@yamadayuki/core';
 import * as assert from 'assert';
 import {Constants} from '../src/trace/constants';
 import {PluginLoader} from '../src/trace/instrumentation/plugin-loader';

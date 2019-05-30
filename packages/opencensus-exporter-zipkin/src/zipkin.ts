@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import * as coreTypes from '@opencensus/core';
-import {Exporter, ExporterBuffer, ExporterConfig, Span, SpanKind} from '@opencensus/core';
-import {logger, Logger} from '@opencensus/core';
+import * as coreTypes from '@yamadayuki/core';
+import {Exporter, ExporterBuffer, ExporterConfig, Span, SpanKind} from '@yamadayuki/core';
+import {logger, Logger} from '@yamadayuki/core';
 import * as http from 'http';
 import * as url from 'url';
 

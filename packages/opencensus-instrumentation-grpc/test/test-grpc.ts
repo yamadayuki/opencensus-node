@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import {CoreTracer, globalStats, Measurement, Span, SpanEventListener, SpanKind, StatsEventListener, TagKey, TagMap, TagValue, View} from '@opencensus/core';
-import {logger} from '@opencensus/core';
+import {CoreTracer, globalStats, Measurement, Span, SpanEventListener, SpanKind, StatsEventListener, TagKey, TagMap, TagValue, View} from '@yamadayuki/core';
+import {logger} from '@yamadayuki/core';
 import * as assert from 'assert';
 import * as grpcModule from 'grpc';
 import * as path from 'path';

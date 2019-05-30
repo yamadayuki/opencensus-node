@@ -15,7 +15,7 @@
  */
 
 import * as protoLoader from '@grpc/proto-loader';
-import {Exporter, ExporterBuffer, ExporterConfig, logger, Logger, Span, version as coreVersion} from '@opencensus/core';
+import {Exporter, ExporterBuffer, ExporterConfig, logger, Logger, Span, version as coreVersion} from '@yamadayuki/core';
 import * as grpc from 'grpc';
 import * as os from 'os';
 import {adaptRootSpan, createNode} from './adapters';

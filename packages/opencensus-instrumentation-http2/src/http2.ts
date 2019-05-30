@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import {Func, HeaderGetter, HeaderSetter, MessageEventType, Span, SpanKind, TraceOptions} from '@opencensus/core';
 import {HttpPlugin} from '@opencensus/instrumentation-http';
+import {Func, HeaderGetter, HeaderSetter, MessageEventType, Span, SpanKind, TraceOptions} from '@yamadayuki/core';
 import * as http2 from 'http2';
 import * as shimmer from 'shimmer';
 import * as url from 'url';

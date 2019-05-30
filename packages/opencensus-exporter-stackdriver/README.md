@@ -72,7 +72,7 @@ With the above you should now be able to navigate to the Stackdriver UI at: <htt
 Install OpenCensus Stackdriver Exporter with:
 
 ```bash
-npm install @opencensus/core
+npm install @yamadayuki/core
 npm install @yamadayuki/exporter-stackdriver
 ```
 
@@ -89,7 +89,7 @@ Create and register the exporter on your application.
 For Javascript:
 
 ```javascript
-const { globalStats } = require("@opencensus/core");
+const { globalStats } = require("@yamadayuki/core");
 const { StackdriverStatsExporter } = require("@yamadayuki/exporter-stackdriver");
 
 // Add your project id to the Stackdriver options
@@ -102,7 +102,7 @@ globalStats.registerExporter(exporter);
 Similarly for TypeScript:
 
 ```typescript
-import { globalStats } from "@opencensus/core";
+import { globalStats } from "@yamadayuki/core";
 import { StackdriverStatsExporter } from "@yamadayuki/exporter-stackdriver";
 
 // Add your project id to the Stackdriver options

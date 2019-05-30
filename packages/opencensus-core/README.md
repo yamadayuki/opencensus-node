@@ -9,7 +9,7 @@ The library is in alpha stage and the API is subject to change.
 
 Install the opencensus-core package with NPM:
 ```bash
-npm install @opencensus/core
+npm install @yamadayuki/core
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ npm install @opencensus/core
 To enable metrics, we’ll import a few items from OpenCensus Core package.
 
 ```javascript
-const { globalStats, MeasureUnit, AggregationType, TagMap } = require('@opencensus/core');
+const { globalStats, MeasureUnit, AggregationType, TagMap } = require('@yamadayuki/core');
 
 // The latency in milliseconds
 const mLatencyMs = globalStats.createMeasureDouble(
@@ -95,9 +95,9 @@ See [Quickstart/Metrics](https://opencensus.io/quickstart/nodejs/metrics/) for a
 
 [gitter-image]: https://badges.gitter.im/census-instrumentation/lobby.svg
 [gitter-url]: https://gitter.im/census-instrumentation/lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
-[npm-url]: https://www.npmjs.com/package/@opencensus/core
+[npm-url]: https://www.npmjs.com/package/@yamadayuki/core
 [npm-img]: https://badge.fury.io/js/%40opencensus%2Fcore.svg
-[node-img]: https://img.shields.io/node/v/@opencensus/core.svg
+[node-img]: https://img.shields.io/node/v/@yamadayuki/core.svg
 [license-image]: https://img.shields.io/badge/license-Apache_2.0-green.svg?style=flat
 [dependencies-status]: https://david-dm.org/census-instrumentation/opencensus-node/status.svg?path=packages/opencensus-core
 [devdependencies-status]:

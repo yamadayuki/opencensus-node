@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {globalStats, Logger, MeasureUnit, Metrics} from '@opencensus/core';
+import {globalStats, Logger, MeasureUnit, Metrics} from '@yamadayuki/core';
 import * as assert from 'assert';
 import {StackdriverStatsExporter} from '../src/stackdriver-monitoring';
 import {MetricKind, StackdriverExporterOptions, ValueType} from '../src/types';

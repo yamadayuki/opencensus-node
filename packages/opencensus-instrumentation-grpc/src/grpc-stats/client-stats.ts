@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {AggregationType, globalStats, Measure, MeasureUnit, View} from '@opencensus/core';
+import {AggregationType, globalStats, Measure, MeasureUnit, View} from '@yamadayuki/core';
 import {DEFAULT_BYTES_DISTRIBUTION, DEFAULT_MESSAGE_COUNT_DISTRIBUTION, DEFAULT_MILLI_SECONDS_DISTRIBUTION} from './common-distributions';
 
 /** {@link Measure} for number of messages sent in the RPC. */

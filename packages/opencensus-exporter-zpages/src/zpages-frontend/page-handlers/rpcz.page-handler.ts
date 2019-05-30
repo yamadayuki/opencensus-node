@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {AggregationType} from '@opencensus/core';
+import {AggregationType} from '@yamadayuki/core';
 import * as ejs from 'ejs';
 import {StatsParams} from '../../zpages';
 import {templatesDir} from './templates-dir';

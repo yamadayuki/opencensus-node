@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {CoreTracer, logger, Span as OCSpan, version} from '@opencensus/core';
+import {CoreTracer, logger, Span as OCSpan, version} from '@yamadayuki/core';
 import * as assert from 'assert';
 import * as fs from 'fs';
 import * as nock from 'nock';

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {Span} from '@opencensus/core';
+import {Span} from '@yamadayuki/core';
 import * as ejs from 'ejs';
 import {LatencyBucketBoundaries} from '../latency-bucket-boundaries';
 import {templatesDir} from './templates-dir';

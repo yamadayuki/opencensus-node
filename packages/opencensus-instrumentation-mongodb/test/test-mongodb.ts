@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {CoreTracer, Span, SpanEventListener, SpanKind} from '@opencensus/core';
+import {CoreTracer, Span, SpanEventListener, SpanKind} from '@yamadayuki/core';
 import * as assert from 'assert';
 import * as mongodb from 'mongodb';
 import {plugin} from '../src/';

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {HeaderGetter, HeaderSetter} from '@opencensus/core';
+import {HeaderGetter, HeaderSetter} from '@yamadayuki/core';
 import * as assert from 'assert';
 import {JaegerFormat, SAMPLED_VALUE, TRACER_STATE_HEADER_NAME} from '../src/';
 

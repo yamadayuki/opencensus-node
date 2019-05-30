@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {CoreResource} from '@opencensus/core';
+import {CoreResource} from '@yamadayuki/core';
 import * as assert from 'assert';
 import {BASE_PATH, HEADER_NAME, HEADER_VALUE, HOST_ADDRESS} from 'gcp-metadata';
 import * as nock from 'nock';

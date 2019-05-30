@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {AggregationType, CountData, DistributionData, globalStats, Measure, Measurement, MeasureUnit, Span, SpanKind, SumData, TagMap, TracerConfig} from '@opencensus/core';
+import {AggregationType, CountData, DistributionData, globalStats, Measure, Measurement, MeasureUnit, Span, SpanKind, SumData, TagMap, TracerConfig} from '@yamadayuki/core';
 import * as assert from 'assert';
 import axios from 'axios';
 import * as http from 'http';

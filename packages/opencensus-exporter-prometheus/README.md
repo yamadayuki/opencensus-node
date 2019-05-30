@@ -11,7 +11,7 @@ This package is still at an early stage of development, and is subject to change
 
 Install OpenCensus Prometheus Exporter with:
 ```bash
-npm install @opencensus/core
+npm install @yamadayuki/core
 npm install @opencensus/exporter-prometheus
 ```
 
@@ -21,7 +21,7 @@ Create & register the exporter on your application.
 
 For Javascript:
 ```javascript
-const { globalStats } = require('@opencensus/core');
+const { globalStats } = require('@yamadayuki/core');
 const { PrometheusStatsExporter } = require('@opencensus/exporter-prometheus');
 
 // Add your port and startServer to the Prometheus options
@@ -41,7 +41,7 @@ globalStats.registerExporter(exporter);
 Similarly for TypeScript (Since the source is written in TypeScript):
 ```typescript
 import { PrometheusStatsExporter } from '@opencensus/exporter-prometheus';
-import { globalStats } from '@opencensus/core';
+import { globalStats } from '@yamadayuki/core';
 
 // Add your port and startServer to the Prometheus options
 const options = {port: 9464, startServer: true};

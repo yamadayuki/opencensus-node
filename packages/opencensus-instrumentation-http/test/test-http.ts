@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {CoreTracer, globalStats, HeaderGetter, HeaderSetter, logger, Measurement, MessageEventType, Propagation, Span, SpanContext, SpanEventListener, SpanKind, StatsEventListener, TagKey, TagMap, TagValue, View} from '@opencensus/core';
+import {CoreTracer, globalStats, HeaderGetter, HeaderSetter, logger, Measurement, MessageEventType, Propagation, Span, SpanContext, SpanEventListener, SpanKind, StatsEventListener, TagKey, TagMap, TagValue, View} from '@yamadayuki/core';
 import * as assert from 'assert';
 import * as http from 'http';
 import * as nock from 'nock';

@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-import {Labels} from '@opencensus/core';
 import * as resource from '@opencensus/resource-util';
 import {CLOUD_RESOURCE, CONTAINER_RESOURCE, HOST_RESOURCE, K8S_RESOURCE} from '@opencensus/resource-util';
+import {Labels} from '@yamadayuki/core';
+
 import {MonitoredResource} from './types';
 
 const STACKDRIVER_PROJECT_ID_KEY = 'project_id';

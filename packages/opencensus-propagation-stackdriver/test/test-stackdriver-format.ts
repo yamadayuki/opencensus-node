@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {HeaderGetter, HeaderSetter} from '@opencensus/core';
+import {HeaderGetter, HeaderSetter} from '@yamadayuki/core';
 import * as assert from 'assert';
 import {StackdriverFormat, TRACE_CONTEXT_HEADER_NAME} from '../src';
 

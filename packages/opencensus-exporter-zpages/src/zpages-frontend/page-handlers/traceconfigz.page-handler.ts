@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-import {SamplerBuilder} from '@opencensus/core';
 import * as tracing from '@opencensus/nodejs';
+import {SamplerBuilder} from '@yamadayuki/core';
 import * as ejs from 'ejs';
+
 import {templatesDir} from './templates-dir';
 
 export interface TraceConfigzParams {

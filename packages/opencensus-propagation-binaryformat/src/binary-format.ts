@@ -22,7 +22,7 @@
  *       master/encodings/BinaryEncoding.md
  */
 
-import {SpanContext} from '@opencensus/core';
+import {SpanContext} from '@yamadayuki/core';
 
 const VERSION_ID = 0;
 const TRACE_ID_FIELD_ID = 0;

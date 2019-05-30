@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {SpanContext} from '@opencensus/core';
+import {SpanContext} from '@yamadayuki/core';
 import * as assert from 'assert';
 import {deserializeSpanContext, serializeSpanContext} from '../src/binary-format';
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {Span} from '@opencensus/core';
+import {Span} from '@yamadayuki/core';
 import * as express from 'express';
 import {StatsParams} from '../zpages';
 import {createRpczHandler} from './controllers/rpcz.controller';

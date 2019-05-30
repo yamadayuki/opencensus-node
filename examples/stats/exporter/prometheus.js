@@ -19,7 +19,7 @@
  * OpenCensus to Prometheus.
  */
 
-const { globalStats, MeasureUnit, AggregationType, TagMap } = require('@opencensus/core');
+const { globalStats, MeasureUnit, AggregationType, TagMap } = require('@yamadayuki/core');
 const { PrometheusStatsExporter } = require('@opencensus/exporter-prometheus');
 
 const fs = require('fs');

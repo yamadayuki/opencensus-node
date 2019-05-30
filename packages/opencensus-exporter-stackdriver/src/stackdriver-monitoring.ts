@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {logger, Logger, Measurement, Metric, MetricDescriptor as OCMetricDescriptor, MetricProducerManager, Metrics, StatsEventListener, TagKey, TagValue, version, View} from '@opencensus/core';
+import {logger, Logger, Measurement, Metric, MetricDescriptor as OCMetricDescriptor, MetricProducerManager, Metrics, StatsEventListener, TagKey, TagValue, version, View} from '@yamadayuki/core';
 import {auth as globalAuth, GoogleAuth, JWT} from 'google-auth-library';
 import {google} from 'googleapis';
 import {getDefaultResource} from './common-utils';

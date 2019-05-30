@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {HeaderGetter, HeaderSetter, SpanContext} from '@opencensus/core';
+import {HeaderGetter, HeaderSetter, SpanContext} from '@yamadayuki/core';
 import * as assert from 'assert';
 import {DEFAULT_OPTIONS, TRACE_PARENT, TRACE_STATE, TraceContextFormat} from '../src/';
 

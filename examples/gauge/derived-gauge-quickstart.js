@@ -19,13 +19,13 @@
  * self sufficient once created
  */
 
-const { Metrics, MeasureUnit } = require("@opencensus/core");
+const { Metrics, MeasureUnit } = require("@yamadayuki/core");
 
 // [UNCOMMENT THIS BLOCK to visualize the data =======================]
 // // Enable OpenCensus exporters to export gauges to Stackdriver Monitoring.
 // const { StackdriverStatsExporter } = require('@yamadayuki/exporter-stackdriver');
 // const exporter = new StackdriverStatsExporter({ projectId: 'projectId' });
-// const { globalStats } = require('@opencensus/core');
+// const { globalStats } = require('@yamadayuki/core');
 // globalStats.registerExporter(exporter);
 // [END setup_exporter ==============================================]
 

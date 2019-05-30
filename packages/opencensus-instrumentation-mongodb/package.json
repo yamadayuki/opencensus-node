@@ -65,7 +65,7 @@
     "typescript": "~2.9.0"
   },
   "dependencies": {
-    "@opencensus/core": "^0.0.13",
+    "@yamadayuki/core": "^0.0.13",
     "shimmer": "^1.2.0"
   }
 }

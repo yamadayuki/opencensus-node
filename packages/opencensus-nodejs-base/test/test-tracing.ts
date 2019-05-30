@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import * as core from '@opencensus/core';
-import {logger} from '@opencensus/core';
+import * as core from '@yamadayuki/core';
+import {logger} from '@yamadayuki/core';
 import * as assert from 'assert';
 import {defaultConfig} from '../src/trace/config/default-config';
 import {TracingBase} from '../src/trace/tracing-base';
