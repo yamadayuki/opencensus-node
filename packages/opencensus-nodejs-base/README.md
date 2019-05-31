@@ -13,7 +13,7 @@ Please join [gitter](https://gitter.im/census-instrumentation/Lobby) for help or
 Install OpenCensus Base with:
 
 ```bash
-npm install @opencensus/nodejs-base
+npm install @yamadayuki/nodejs-base
 ```
 
 ## Traces
@@ -21,12 +21,12 @@ npm install @opencensus/nodejs-base
 ### Automatically Instrumenting an Application
 
 For automatic insturmentation see the
-[@opencensus/nodejs](https://github.com/census-instrumentation/opencensus-node/tree/master/packages/opencensus-nodejs)
+[@yamadayuki/nodejs](https://github.com/census-instrumentation/opencensus-node/tree/master/packages/opencensus-nodejs)
 package.
 
 ### Manually Instrumenting an Application
 
-With `@opencensus/nodejs-base` you have a full control over instrumentation and
+With `@yamadayuki/nodejs-base` you have a full control over instrumentation and
 span creation. The base package doesn't load Continuation Local Storage (CLS)
 or any instrumentation plugin by default.
 
@@ -49,7 +49,7 @@ tracing.tracer.startRootSpan(rootSpanOptions, (rootSpan) => {
 
 ### Tracing Options
 
- See the `@opencensus/nodejs` package for the full API documentation.
+ See the `@yamadayuki/nodejs` package for the full API documentation.
 
 ## Useful links
 - For more information on OpenCensus, visit: <https://opencensus.io/>

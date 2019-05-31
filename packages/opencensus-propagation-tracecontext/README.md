@@ -19,7 +19,7 @@ npm install @yamadayuki/propagation-tracecontext
 To propagate span context arround services with Trace Context Propagation, pass an instance of Trace Context Propagation to your tracing instance. For Javascript:
 
 ```javascript
-const tracing = require("@opencensus/nodejs");
+const tracing = require("@yamadayuki/nodejs");
 const propagation = require("@yamadayuki/propagation-tracecontext");
 
 const traceContext = new propagation.TraceContextFormat();
@@ -30,7 +30,7 @@ tracing.start({ propagation: traceContext });
 Similarly for Typescript:
 
 ```typescript
-import * as tracing from "@opencensus/nodejs";
+import * as tracing from "@yamadayuki/nodejs";
 import { TraceContextFormat } from "@yamadayuki/propagation-tracecontext";
 
 const traceContext = new TraceContextFormat();

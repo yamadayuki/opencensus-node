@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const tracing = require("@opencensus/nodejs");
+const tracing = require("@yamadayuki/nodejs");
 const stackdriver = require("@yamadayuki/exporter-stackdriver");
 
 // Add your project id to the Stackdriver options

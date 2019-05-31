@@ -33,7 +33,7 @@ docker run -d \
 
 Install OpenCensus Jaeger Exporter with:
 ```bash
-npm install @opencensus/nodejs
+npm install @yamadayuki/nodejs
 npm install @opencensus/exporter-jaeger
 ```
 
@@ -44,7 +44,7 @@ Install the exporter on your application and pass the options, it must contain a
 For ES6:
 
 ```javascript
-import tracing from '@opencensus/nodejs';
+import tracing from '@yamadayuki/nodejs';
 import { JaegerTraceExporter } from '@opencensus/exporter-jaeger';
 
 const options = {

@@ -9,7 +9,7 @@ The library is in alpha stage and the API is subject to change.
 
 Install OpenCensus Agent Exporter with:
 ```bash
-npm install @opencensus/nodejs
+npm install @yamadayuki/nodejs
 npm install @opencensus/exporter-ocagent
 ```
 
@@ -18,7 +18,7 @@ npm install @opencensus/exporter-ocagent
 Instance the exporter on your application. For javascript:
 
 ```javascript
-const tracing = require('@opencensus/nodejs');
+const tracing = require('@yamadayuki/nodejs');
 const ocagent = require('@opencensus/exporter-ocagent');
 
 const exporter = new ocagent.OCAgentExporter({
@@ -31,7 +31,7 @@ tracing.registerExporter(exporter).start();
 Similarly for Typescript:
 
 ```typescript
-import * as tracing from '@opencensus/nodejs';
+import * as tracing from '@yamadayuki/nodejs';
 import { OCAgentExporter } from '@opencensus/exporter-ocagent';
 
 const exporter = new OCAgentExporter({

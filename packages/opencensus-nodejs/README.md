@@ -12,7 +12,7 @@ Please join [gitter](https://gitter.im/census-instrumentation/Lobby) for help or
 Install OpenCensus with:
 
 ```bash
-npm install @opencensus/nodejs
+npm install @yamadayuki/nodejs
 ```
 
 ## Traces
@@ -31,14 +31,14 @@ OpenCensus for Node.js has automatic instrumentation out of the box for those mo
 This means that spans are automatically created for operations of those packages. To use it, simply start the tracing instance.
 
 ```javascript
-const tracing = require('@opencensus/nodejs');
+const tracing = require('@yamadayuki/nodejs');
 tracing.start();
 ```
 
 Similarly for Typescript:
 
 ```typescript
-import * as tracing from '@opencensus/nodejs';
+import * as tracing from '@yamadayuki/nodejs';
 tracing.start();
 ```
 
@@ -64,7 +64,7 @@ tracing.tracer.startRootSpan(rootSpanOptions, (rootSpan) => {
 ```
 
 For manual only instrumentation see the
-[@opencensus/nodejs-base](https://github.com/census-instrumentation/opencensus-node/tree/master/packages/opencensus-nodejs-base)
+[@yamadayuki/nodejs-base](https://github.com/census-instrumentation/opencensus-node/tree/master/packages/opencensus-nodejs-base)
 package.
 
 ### Tracing Options

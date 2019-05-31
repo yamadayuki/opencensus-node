@@ -15,7 +15,7 @@
  */
 
 /** Example showing how to directly create a child span and add annotations. */
-const tracing = require('@opencensus/nodejs');
+const tracing = require('@yamadayuki/nodejs');
 const { ZipkinTraceExporter } = require('@opencensus/exporter-zipkin');
 
 // 1. Get the global singleton Tracer object

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import * as tracing from '@opencensus/nodejs';
 import {SamplerBuilder} from '@yamadayuki/core';
+import * as tracing from '@yamadayuki/nodejs';
 import * as ejs from 'ejs';
 
 import {templatesDir} from './templates-dir';

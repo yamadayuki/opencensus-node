@@ -125,7 +125,7 @@ describe('Zpages Exporter', () => {
 
     before((done) => {
       /** Creating here because tracing is a singleton */
-      const tracing = require('@opencensus/nodejs');
+      const tracing = require('@yamadayuki/nodejs');
       zpages = new ZpagesExporter(options);
 
       tracing.start(defaultConfig);
@@ -165,7 +165,7 @@ describe('Zpages Exporter', () => {
 
     before((done) => {
       /** Creating here because tracing is a singleton */
-      const tracing = require('@opencensus/nodejs');
+      const tracing = require('@yamadayuki/nodejs');
       zpages = new ZpagesExporter(options);
 
       tracing.start(defaultConfig);

@@ -15,8 +15,8 @@
  */
 
 import * as protoLoader from '@grpc/proto-loader';
-import * as nodeTracing from '@opencensus/nodejs';
 import {CanonicalCode, LinkType, MessageEventType, Span, SpanKind, TraceOptions, Tracing} from '@yamadayuki/core';
+import * as nodeTracing from '@yamadayuki/nodejs';
 import * as assert from 'assert';
 import {EventEmitter} from 'events';
 import * as grpc from 'grpc';

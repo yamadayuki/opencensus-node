@@ -17,14 +17,14 @@ Please join [gitter](https://gitter.im/census-instrumentation/Lobby) for help or
 Install OpenCensus with:
 
 ```bash
-npm install @opencensus/nodejs
+npm install @yamadayuki/nodejs
 ```
 
 
 Install OpenCensus Base without automatic instrumentation:
 
 ```bash
-npm install @opencensus/nodejs-base
+npm install @yamadayuki/nodejs-base
 ```
 
 ## Plugins
@@ -92,9 +92,9 @@ months before removing it, if possible.
 [codecov-url]: https://codecov.io/gh/census-instrumentation/opencensus-node
 [gitter-image]: https://badges.gitter.im/census-instrumentation/lobby.svg
 [gitter-url]: https://gitter.im/census-instrumentation/lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
-[npm-url]: https://www.npmjs.com/package/@opencensus/nodejs
+[npm-url]: https://www.npmjs.com/package/@yamadayuki/nodejs
 [npm-img]: https://badge.fury.io/js/%40opencensus%2Fnodejs.svg
-[node-img]: https://img.shields.io/node/v/@opencensus/nodejs.svg
+[node-img]: https://img.shields.io/node/v/@yamadayuki/nodejs.svg
 [license-image]: https://img.shields.io/badge/license-Apache_2.0-green.svg?style=flat
 [snyk-image]: https://snyk.io/test/github/census-instrumentation/opencensus-node/badge.svg?style=flat
 [snyk-url]: https://snyk.io/test/github/census-instrumentation/opencensus-node

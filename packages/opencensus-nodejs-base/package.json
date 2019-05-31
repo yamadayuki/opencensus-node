@@ -1,5 +1,5 @@
 {
-  "name": "@opencensus/nodejs-base",
+  "name": "@yamadayuki/nodejs-base",
   "version": "0.0.14-alpha.1",
   "private": true,
   "description": "OpenCensus is a toolkit for collecting application performance and behavior data.",

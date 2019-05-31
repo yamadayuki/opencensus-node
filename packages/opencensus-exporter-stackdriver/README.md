@@ -13,7 +13,7 @@ The library is in alpha stage and the API is subject to change.
 Install OpenCensus Stackdriver Exporter with:
 
 ```bash
-npm install @opencensus/nodejs
+npm install @yamadayuki/nodejs
 npm install @yamadayuki/exporter-stackdriver
 ```
 
@@ -30,7 +30,7 @@ Create and register the exporter on your application and pass your Project ID.
 For Javascript:
 
 ```javascript
-const tracing = require("@opencensus/nodejs");
+const tracing = require("@yamadayuki/nodejs");
 const { StackdriverTraceExporter } = require("@yamadayuki/exporter-stackdriver");
 
 // Add your project id to the Stackdriver options
@@ -42,7 +42,7 @@ tracing.registerExporter(exporter).start();
 Similarly for TypeScript:
 
 ```typescript
-import * as tracing from "@opencensus/nodejs";
+import * as tracing from "@yamadayuki/nodejs";
 import { StackdriverTraceExporter } from "@yamadayuki/exporter-stackdriver";
 
 // Add your project id to the Stackdriver options

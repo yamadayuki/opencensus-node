@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const tracing = require('@opencensus/nodejs');
+const tracing = require('@yamadayuki/nodejs');
 const zipkin = require('@opencensus/exporter-zipkin');
 
 // Add your zipkin url and service name to the Zipkin options

@@ -65,7 +65,7 @@
   },
   "dependencies": {
     "@grpc/proto-loader": "^0.5.0",
-    "@opencensus/nodejs": "^0.0.14-alpha.1",
+    "@yamadayuki/nodejs": "^0.0.14-alpha.1",
     "@yamadayuki/core": "^0.0.14-alpha.1",
     "grpc": "^1.20.3"
   }

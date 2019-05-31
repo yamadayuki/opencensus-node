@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const tracing = require("@opencensus/nodejs");
+const tracing = require("@yamadayuki/nodejs");
 const { ZipkinTraceExporter } = require("@opencensus/exporter-zipkin");
 const { TraceContextFormat } = require("@yamadayuki/propagation-tracecontext");
 

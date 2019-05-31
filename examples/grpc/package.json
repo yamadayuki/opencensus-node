@@ -23,7 +23,7 @@
     "@grpc/proto-loader": "^0.4.0",
     "@yamadayuki/exporter-stackdriver": "^0.0.13",
     "@opencensus/instrumentation-grpc": "^0.0.13",
-    "@opencensus/nodejs": "^0.0.13",
+    "@yamadayuki/nodejs": "^0.0.13",
     "grpc": "^1.18.0"
   },
   "devDependencies": {

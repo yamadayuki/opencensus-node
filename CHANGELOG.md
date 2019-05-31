@@ -25,7 +25,7 @@ All notable changes to this project will be documented in this file.
 - Add `defaultAttributes` config to `Tracer.start(config)`
 - http-instrumentation: Handle incoming requests with long request url path.
 - Add Cumulative (`DoubleCumulative`, `LongCumulative`, , `DerivedDoubleCumulative`, `DerivedLongCumulative`) APIs.
-- Export `TracerBase` as a separate `@opencensus/nodejs-base` package.
+- Export `TracerBase` as a separate `@yamadayuki/nodejs-base` package.
 - Fix(deps): update dependency nyc to v14.
 - Fix(deps): update dependency grpc to ~1.20.0
 - chore(package): update handlebar to avoid security vulnabirity.

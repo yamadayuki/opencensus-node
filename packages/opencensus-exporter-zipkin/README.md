@@ -14,7 +14,7 @@ The library is in alpha stage and the API is subject to change.
 
 Install OpenCensus Zipkin Exporter with:
 ```bash
-npm install @opencensus/nodejs
+npm install @yamadayuki/nodejs
 npm install @opencensus/exporter-zipkin
 ```
 
@@ -32,7 +32,7 @@ Instance the exporter on your application and pass the options, it must contain 
 For javascript:
 
 ```javascript
-const tracing = require('@opencensus/nodejs');
+const tracing = require('@yamadayuki/nodejs');
 const zipkin = require('@opencensus/exporter-zipkin');
 
 // Add your zipkin url (ex http://localhost:9411/api/v2/spans)
@@ -47,7 +47,7 @@ const exporter = new zipkin.ZipkinTraceExporter(options);
 Similarly for Typescript:
 
 ```typescript
-import * as tracing from '@opencensus/nodejs';
+import * as tracing from '@yamadayuki/nodejs';
 import { Zipkin } from '@opencensus/exporter-zipkin';
 
 // Add your zipkin url (ex http://localhost:9411/api/v2/spans)

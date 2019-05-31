@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const tracing = require('@opencensus/nodejs');
+const tracing = require('@yamadayuki/nodejs');
 const instana = require('@opencensus/exporter-instana');
 
 const exporter = new instana.InstanaTraceExporter();

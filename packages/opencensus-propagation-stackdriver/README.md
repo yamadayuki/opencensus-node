@@ -17,7 +17,7 @@ npm install @opencensus/propagation-stackdriver
 To propagate span context arround services with Stackdriver Propagation, pass an instance of Stackdriver Propagation to your tracing instance. For Javascript:
 
 ```javascript
-const tracing = require('@opencensus/nodejs');
+const tracing = require('@yamadayuki/nodejs');
 const propagation = require('@opencensus/propagation-stackdriver');
 
 const sd = propagation.v1;
@@ -28,7 +28,7 @@ tracing.start({propagation: sd});
 Similarly for Typescript:
 
 ```typescript
-import * as tracing from '@opencensus/nodejs';
+import * as tracing from '@yamadayuki/nodejs';
 import * as propagation from '@opencensus/propagation-stackdriver';
 
 const sd = propagation.v1;

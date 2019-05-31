@@ -17,7 +17,7 @@ npm install @opencensus/propagation-jaeger
 To propagate span context arround services with Jaeger Propagation, pass an instance of Jaeger Propagation to your tracing instance. For Javascript:
 
 ```javascript
-const tracing = require('@opencensus/nodejs');
+const tracing = require('@yamadayuki/nodejs');
 const propagation = require('@opencensus/propagation-jaeger');
 
 const jaeger = new propagation.JaegerFormat();
@@ -28,7 +28,7 @@ tracing.start({propagation: jaeger});
 Similarly for Typescript:
 
 ```typescript
-import * as tracing from '@opencensus/nodejs';
+import * as tracing from '@yamadayuki/nodejs';
 import { JaegerFormat } from '@opencensus/propagation-jaeger';
 
 const jaeger = new JaegerFormat();

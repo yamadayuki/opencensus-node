@@ -8,7 +8,7 @@ The library is in alpha stage and the API is subject to change.
 ## Installation
 
 ```node
-npm install @opencensus/nodejs
+npm install @yamadayuki/nodejs
 npm install @opencensus/exporter-zpages
 ```
 
@@ -19,7 +19,7 @@ Zpages always runs on localhost, but you can change the port in the options. If 
 To use Zpages, instance the exporter on your application and pass the options. For javascript:
 
 ```javascript
-const tracing = require('@opencensus/nodejs');
+const tracing = require('@yamadayuki/nodejs');
 const zpages = require('@opencensus/exporter-zipkin');
 
 // Add your zipkin url and application name to the Zipkin options
@@ -35,7 +35,7 @@ const exporter = new zpages.ZpagesExporter(options);
 Similarly for Typescript:
 
 ```typescript
-import * as tracing from '@opencensus/nodejs';
+import * as tracing from '@yamadayuki/nodejs';
 import {ZpagesExporter, ZpagesExporterOptions} from '@opencensus/zpages-exporter';
 
 // Add your zipkin url and application name to the Zipkin options

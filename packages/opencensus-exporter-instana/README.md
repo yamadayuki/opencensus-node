@@ -12,7 +12,7 @@ The library is in alpha stage and the API is subject to change.
 
 Install OpenCensus Instana Exporter with:
 ```bash
-npm install @opencensus/nodejs
+npm install @yamadayuki/nodejs
 npm install @opencensus/exporter-instana
 ```
 
@@ -20,7 +20,7 @@ npm install @opencensus/exporter-instana
 To use Instana as your exporter, first ensure that you have an [Instana agent running on your system](https://docs.instana.io/quick_start/getting_started/) and reporting to your environment. The Instana OpenCensus exporter directly communicates with the Instana agent in order to transmit data to Instana.
 
 ```javascript
-const tracing = require('@opencensus/nodejs');
+const tracing = require('@yamadayuki/nodejs');
 const instana = require('@opencensus/exporter-instana');
 
 tracing.start({

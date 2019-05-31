@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 import {DEFAULT_INSTRUMENTATION_MODULES} from '@opencensus/instrumentation-all';
-import {TracingBase} from '@opencensus/nodejs-base';
 import * as core from '@yamadayuki/core';
+import {TracingBase} from '@yamadayuki/nodejs-base';
 
 /** Implements a Tracing with Continuation Local Storage (CLS). */
 export class Tracing extends TracingBase {

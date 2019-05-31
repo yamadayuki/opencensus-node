@@ -7,7 +7,7 @@
   "dependencies": {
     "@opencensus/exporter-instana": "^0.0.14-alpha.1",
     "@opencensus/exporter-zipkin": "^0.0.14-alpha.1",
-    "@opencensus/nodejs": "^0.0.14-alpha.1",
+    "@yamadayuki/nodejs": "^0.0.14-alpha.1",
     "@yamadayuki/exporter-stackdriver": "^0.0.14-alpha.1"
   }
 }

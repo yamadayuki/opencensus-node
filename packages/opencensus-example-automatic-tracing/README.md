@@ -7,7 +7,7 @@ In this example we'll build a simple http server that returns `Hello World`. We'
 Install OpenCensus with:
 
 ```bash
-npm install @opencensus/nodejs
+npm install @yamadayuki/nodejs
 ```
 
 ## Instrumenting the Application
@@ -15,7 +15,7 @@ npm install @opencensus/nodejs
 OpenCensus is able to automatically trace HTTP requests, therefore, you just need to require OpenCensus in your application with:
 
 ```javascript
-const tracing = require('@opencensus/nodejs');
+const tracing = require('@yamadayuki/nodejs');
 tracing.start();
 
 const http = require('http');

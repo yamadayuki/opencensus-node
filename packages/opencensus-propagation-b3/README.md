@@ -17,7 +17,7 @@ npm install @opencensus/propagation-b3
 To propagate span context arround services with B3 Propagation, pass an instance of B3 Propagation to your tracing instance. For Javascript:
 
 ```javascript
-const tracing = require('@opencensus/nodejs');
+const tracing = require('@yamadayuki/nodejs');
 const propagation = require('@opencensus/propagation-b3');
 
 const b3 = new propagation.B3Format();
@@ -28,7 +28,7 @@ tracing.start({propagation: b3});
 Similarly for Typescript:
 
 ```typescript
-import * as tracing from '@opencensus/nodejs';
+import * as tracing from '@yamadayuki/nodejs';
 import { B3Format } from '@opencensus/propagation-b3';
 
 const b3 = new B3Format();
