@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import {deserializeSpanContext, serializeSpanContext} from '@opencensus/propagation-binaryformat';
-import {BasePlugin, CanonicalCode, deserializeBinary, MessageEventType, PluginInternalFiles, serializeBinary, Span, SpanContext, SpanKind, TagMap, TagTtl, TraceOptions} from '@yamadayuki/core';
+import {BasePlugin, CanonicalCode, deserializeBinary, MessageEventType, PluginInternalFiles, serializeBinary, Span, SpanContext, SpanKind, TagMap, TagTtl, TraceOptions,} from '@yamadayuki/core';
+import {deserializeSpanContext, serializeSpanContext} from '@yamadayuki/propagation-binaryformat';
 import {EventEmitter} from 'events';
 import * as grpcTypes from 'grpc';
 import * as lodash from 'lodash';
@@ -41,19 +41,19 @@ type MakeClientConstructor = typeof grpcTypes.makeGenericClientConstructor;
 type RegisterMethod = typeof grpcTypes.Server.prototype.register;
 
 type Status = {
-  code: number, details: string; metadata: grpcTypes.Metadata;
+  code: number; details: string; metadata: grpcTypes.Metadata;
 };
 
-type ServerCall = typeof grpcTypes.ServerUnaryCall|
-                  typeof grpcTypes.ServerReadableStream|
-                  typeof grpcTypes.ServerWriteableStream|
-                  typeof grpcTypes.ServerDuplexStream;
+type ServerCall =|typeof grpcTypes.ServerUnaryCall|
+                 typeof grpcTypes.ServerReadableStream|
+                 typeof grpcTypes.ServerWriteableStream|
+                 typeof grpcTypes.ServerDuplexStream;
 
 type ServerCallWithMeta = ServerCall&{
   metadata: grpcTypes.Metadata;
   status: Status;
   // tslint:disable-next-line:no-any
-  request?: any
+  request?: any;
 }
 &EventEmitter;
 
@@ -77,7 +77,7 @@ let Metadata: any;
 let GrpcClientModule: any;
 
 const UNLIMITED_PROPAGATION_MD = {
-  tagTtl: TagTtl.UNLIMITED_PROPAGATION
+  tagTtl: TagTtl.UNLIMITED_PROPAGATION,
 };
 
 /** gRPC instrumentation plugin for Opencensus */
@@ -91,10 +91,10 @@ export class GrpcPlugin extends BasePlugin {
 
   protected readonly internalFileList: PluginInternalFiles = {
     '0.13 - 1.6': {
-      'client': 'src/node/src/client.js',
-      'metadata': 'src/node/src/metadata.js'
+      client: 'src/node/src/client.js',
+      metadata: 'src/node/src/metadata.js',
     },
-    '^1.7': {'client': 'src/client.js', 'metadata': 'src/metadata.js'}
+    '^1.7': {client: 'src/client.js', metadata: 'src/metadata.js'},
   };
 
   /** Constructs a new GrpcPlugin instance. */
@@ -160,7 +160,7 @@ export class GrpcPlugin extends BasePlugin {
 
                 const traceOptions: TraceOptions = {
                   name: `grpc.${name.replace('/', '')}`,
-                  kind: SpanKind.SERVER
+                  kind: SpanKind.SERVER,
                 };
 
                 const spanContext = GrpcPlugin.getSpanContext(call.metadata);
@@ -307,7 +307,6 @@ export class GrpcPlugin extends BasePlugin {
     };
   }
 
-
   /**
    * This function starts a span (child or root) immediately before the
    * client method is invoked, and ends it either in a callback or stream
@@ -318,9 +317,7 @@ export class GrpcPlugin extends BasePlugin {
     // tslint:disable-next-line:no-any
     return (original: GrpcClientFunc) => {
       plugin.logger.debug('patchAllClientsMethods');
-      return function clientMethodTrace(
-          this: grpcTypes.Client,
-      ) {
+      return function clientMethodTrace(this: grpcTypes.Client) {
         const traceOptions = {
           name: `grpc.${original.path.replace('/', '')}`,
           kind: SpanKind.CLIENT,
@@ -338,8 +335,8 @@ export class GrpcPlugin extends BasePlugin {
         } else {
           const span = plugin.tracer.startChildSpan(
               {name: traceOptions.name, kind: traceOptions.kind});
-          return (plugin.makeGrpcClientRemoteCall(
-              original, args, this, plugin))(span);
+          return plugin.makeGrpcClientRemoteCall(
+              original, args, this, plugin)(span);
         }
       };
     };
@@ -349,9 +346,9 @@ export class GrpcPlugin extends BasePlugin {
    * This method handels the client remote call
    */
   private makeGrpcClientRemoteCall(
+      original: GrpcClientFunc,
       // tslint:disable-next-line:no-any
-      original: GrpcClientFunc, args: any[], self: grpcTypes.Client,
-      plugin: GrpcPlugin) {
+      args: any[], self: grpcTypes.Client, plugin: GrpcPlugin) {
     const startTime = Date.now();
     const originalArgs = args;
     /**
@@ -409,7 +406,7 @@ export class GrpcPlugin extends BasePlugin {
       const metadata = this.getMetadata(original, args);
       // if unary or clientStream
       if (!original.responseStream) {
-        const callbackFuncIndex = findIndex(args, (arg) => {
+        const callbackFuncIndex = findIndex(args, arg => {
           return typeof arg === 'function';
         });
         if (callbackFuncIndex !== -1) {
@@ -589,19 +586,19 @@ export class GrpcPlugin extends BasePlugin {
         case SpanKind.CLIENT:
           measureList.push({
             measure: clientStats.GRPC_CLIENT_SENT_BYTES_PER_RPC,
-            value: sizeof(argsOrValue)
+            value: sizeof(argsOrValue),
           });
           measureList.push({
             measure: clientStats.GRPC_CLIENT_RECEIVED_BYTES_PER_RPC,
-            value: sizeof(reqOrRes)
+            value: sizeof(reqOrRes),
           });
           measureList.push({
             measure: clientStats.GRPC_CLIENT_RECEIVED_MESSAGES_PER_RPC,
-            value: 1
+            value: 1,
           });
           measureList.push({
             measure: clientStats.GRPC_CLIENT_SENT_MESSAGES_PER_RPC,
-            value: 1
+            value: 1,
           });
           measureList.push(
               {measure: clientStats.GRPC_CLIENT_ROUNDTRIP_LATENCY, value: ms});
@@ -609,19 +606,19 @@ export class GrpcPlugin extends BasePlugin {
         case SpanKind.SERVER:
           measureList.push({
             measure: serverStats.GRPC_SERVER_RECEIVED_BYTES_PER_RPC,
-            value: sizeof(reqOrRes)
+            value: sizeof(reqOrRes),
           });
           measureList.push({
             measure: serverStats.GRPC_SERVER_RECEIVED_MESSAGES_PER_RPC,
-            value: 1
+            value: 1,
           });
           measureList.push({
             measure: serverStats.GRPC_SERVER_SENT_BYTES_PER_RPC,
-            value: sizeof(argsOrValue)
+            value: sizeof(argsOrValue),
           });
           measureList.push({
             measure: serverStats.GRPC_SERVER_SENT_MESSAGES_PER_RPC,
-            value: 1
+            value: 1,
           });
           measureList.push(
               {measure: serverStats.GRPC_SERVER_SERVER_LATENCY, value: ms});
