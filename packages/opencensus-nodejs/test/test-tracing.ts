@@ -13,31 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { DEFAULT_INSTRUMENTATION_MODULES } from "@yamadayuki/instrumentation-all";
-import * as core from "@yamadayuki/core";
-import * as assert from "assert";
+import * as core from '@yamadayuki/core';
+import {DEFAULT_INSTRUMENTATION_MODULES} from '@yamadayuki/instrumentation-all';
+import * as assert from 'assert';
 
-import { Tracing } from "../src/trace/tracing";
+import {Tracing} from '../src/trace/tracing';
 
-describe("Tracing", () => {
+describe('Tracing', () => {
   /** Should create a Tracing instance */
-  describe("new Tracing()", () => {
-    it("should create a Tracer instance", () => {
+  describe('new Tracing()', () => {
+    it('should create a Tracer instance', () => {
       const tracing = new Tracing();
       assert.ok(tracing instanceof Tracing);
     });
   });
 
   /** Should get the singleton trancing instance. */
-  describe("static get instance()", () => {
-    it("should get the singleton trancing instance", () => {
+  describe('static get instance()', () => {
+    it('should get the singleton trancing instance', () => {
       const tracing = Tracing.instance;
       assert.ok(tracing instanceof Tracing);
     });
   });
 
   /** Should return a started tracing instance */
-  describe("start()", () => {
+  describe('start()', () => {
     let aTracing: core.Tracing;
     const tracing = new Tracing();
     // tslint:disable:no-any
@@ -47,7 +47,7 @@ describe("Tracing", () => {
       }
     });
 
-    it("should return a tracing instance", () => {
+    it('should return a tracing instance', () => {
       aTracing = tracing.start();
       assert.ok(aTracing instanceof Tracing);
       assert.ok(tracing.active);
@@ -58,33 +58,40 @@ describe("Tracing", () => {
     // configuration field is added.
     // Should be investigated a way to automatically do this
 
-    describe("start with different config objects", () => {
-      it("should start with default plugin list", () => {
+    describe('start with different config objects', () => {
+      it('should start with default plugin list', () => {
         tracing.start();
         assert.ok(tracing.config.plugins);
 
         DEFAULT_INSTRUMENTATION_MODULES.forEach(pluginName => {
           if (tracing.config.plugins) {
             assert.ok(tracing.config.plugins[pluginName]);
-            assert.strictEqual(tracing.config.plugins[pluginName], `@opencensus/instrumentation-${pluginName}`);
+            assert.strictEqual(
+                tracing.config.plugins[pluginName],
+                `@yamadayuki/instrumentation-${pluginName}`);
           }
         });
       });
 
-      it("should start with an user-provided plugin list", () => {
+      it('should start with an user-provided plugin list', () => {
         const endUserPlugins = {
-          http: "enduser-http-pluging",
-          "simple-module": "enduser-simple-module-pluging",
+          http: 'enduser-http-pluging',
+          'simple-module': 'enduser-simple-module-pluging',
         };
-        tracing.start({ plugins: endUserPlugins });
+        tracing.start({plugins: endUserPlugins});
         assert.ok(tracing.config.plugins);
         if (tracing.config.plugins) {
           // should overwrite default http plugin
-          assert.strictEqual(tracing.config.plugins["http"], endUserPlugins["http"]);
+          assert.strictEqual(
+              tracing.config.plugins['http'], endUserPlugins['http']);
           // should add a new plugin
-          assert.strictEqual(tracing.config.plugins["simple-module"], endUserPlugins["simple-module"]);
+          assert.strictEqual(
+              tracing.config.plugins['simple-module'],
+              endUserPlugins['simple-module']);
           // should keep plugins default value
-          assert.strictEqual(tracing.config.plugins["https"], "@opencensus/instrumentation-https");
+          assert.strictEqual(
+              tracing.config.plugins['https'],
+              '@yamadayuki/instrumentation-https');
         }
       });
     });

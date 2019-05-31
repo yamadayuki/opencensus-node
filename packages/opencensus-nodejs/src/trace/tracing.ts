@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { DEFAULT_INSTRUMENTATION_MODULES } from "@yamadayuki/instrumentation-all";
-import * as core from "@yamadayuki/core";
-import { TracingBase } from "@yamadayuki/nodejs-base";
+import * as core from '@yamadayuki/core';
+import {DEFAULT_INSTRUMENTATION_MODULES} from '@yamadayuki/instrumentation-all';
+import {TracingBase} from '@yamadayuki/nodejs-base';
 
 /** Implements a Tracing with Continuation Local Storage (CLS). */
 export class Tracing extends TracingBase {

@@ -21,7 +21,7 @@ const constants = {
   /** Default max timeout for a buffer before being flushed */
   DEFAULT_BUFFER_TIMEOUT: 20000,
   /** OpenCensus Scope */
-  OPENCENSUS_SCOPE: '@opencensus',
+  OPENCENSUS_SCOPE: '@yamadayuki',
   /** Default prefix for instrumentation modules */
   DEFAULT_PLUGIN_PACKAGE_NAME_PREFIX: 'instrumentation',
   /** Default Limit for Trace Parameters */

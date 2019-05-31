@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import {HttpPlugin} from '@opencensus/instrumentation-http';
 import {Func, HeaderGetter, HeaderSetter, MessageEventType, Span, SpanKind, TraceOptions} from '@yamadayuki/core';
+import {HttpPlugin} from '@yamadayuki/instrumentation-http';
 import * as http2 from 'http2';
 import * as shimmer from 'shimmer';
 import * as url from 'url';
@@ -62,18 +62,18 @@ export class Http2Plugin extends HttpPlugin {
   private getPatchConnectFunction() {
     const plugin = this;
     return (original: ConnectFunction): Func<http2.ClientHttp2Session> => {
-      return function patchedConnect(this: Http2Plugin, authority: string):
-          http2.ClientHttp2Session {
-            const client = original.apply(this, arguments);
-            shimmer.wrap(
-                client, 'request',
-                (original) =>
-                    (plugin.getPatchRequestFunction())(original, authority));
+      return function patchedConnect(
+                 this: Http2Plugin,
+                 authority: string): http2.ClientHttp2Session {
+        const client = original.apply(this, arguments);
+        shimmer.wrap(
+            client, 'request',
+            original => plugin.getPatchRequestFunction()(original, authority));
 
-            shimmer.unwrap(plugin.moduleExports, 'connect');
+        shimmer.unwrap(plugin.moduleExports, 'connect');
 
-            return client;
-          };
+        return client;
+      };
     };
   }
 
@@ -109,8 +109,8 @@ export class Http2Plugin extends HttpPlugin {
         } else {
           const span = plugin.tracer.startChildSpan(
               {name: traceOptions.name, kind: traceOptions.kind});
-          return (plugin.getMakeHttp2RequestTraceFunction(
-              request, headers, authority, plugin))(span);
+          return plugin.getMakeHttp2RequestTraceFunction(
+              request, headers, authority, plugin)(span);
         }
       };
     };
@@ -125,7 +125,7 @@ export class Http2Plugin extends HttpPlugin {
       const setter: HeaderSetter = {
         setHeader(name: string, value: string) {
           headers[name] = value;
-        }
+        },
       };
 
       const propagation = plugin.tracer.propagation;
@@ -206,7 +206,7 @@ export class Http2Plugin extends HttpPlugin {
         const getter: HeaderGetter = {
           getHeader(name: string) {
             return headers[name];
-          }
+          },
         };
 
         const traceOptions: TraceOptions = {

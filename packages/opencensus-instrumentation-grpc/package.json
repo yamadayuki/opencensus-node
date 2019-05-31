@@ -1,5 +1,5 @@
 {
-  "name": "@opencensus/instrumentation-grpc",
+  "name": "@yamadayuki/instrumentation-grpc",
   "version": "0.0.14-alpha.1",
   "private": true,
   "description": "Opencensus grpc automatic instrumentation package.",

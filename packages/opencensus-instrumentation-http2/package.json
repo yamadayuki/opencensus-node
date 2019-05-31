@@ -1,5 +1,5 @@
 {
-  "name": "@opencensus/instrumentation-http2",
+  "name": "@yamadayuki/instrumentation-http2",
   "version": "0.0.14-alpha.1",
   "private": true,
   "description": "Opencensus http2 automatic instrumentation package.",
@@ -64,7 +64,7 @@
     "typescript": "~2.9.0"
   },
   "dependencies": {
-    "@opencensus/instrumentation-http": "^0.0.14-alpha.1",
+    "@yamadayuki/instrumentation-http": "^0.0.14-alpha.1",
     "@yamadayuki/core": "^0.0.14-alpha.1",
     "semver": "^6.0.0",
     "shimmer": "^1.2.0"

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import {HttpPlugin} from '@opencensus/instrumentation-http';
 import {Func} from '@yamadayuki/core';
+import {HttpPlugin} from '@yamadayuki/instrumentation-http';
 import * as http from 'http';
 import * as https from 'https';
 import * as semver from 'semver';
@@ -63,12 +63,12 @@ export class HttpsPlugin extends HttpPlugin {
       return function httpsOutgoingRequest(
                  options, callback): http.ClientRequest {
         // Makes sure options will have default HTTPS parameters
-        if (typeof (options) !== 'string') {
+        if (typeof options !== 'string') {
           options.protocol = options.protocol || 'https:';
           options.port = options.port || 443;
           options.agent = options.agent || https.globalAgent;
         }
-        return (plugin.getPatchOutgoingRequestFunction())(original)(
+        return plugin.getPatchOutgoingRequestFunction()(original)(
             options, callback);
       };
     };

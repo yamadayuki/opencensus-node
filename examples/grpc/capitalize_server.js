@@ -18,7 +18,7 @@ const path = require("path");
 const grpc = require("grpc");
 const protoLoader = require("@grpc/proto-loader");
 const tracing = require("@yamadayuki/nodejs");
-const { plugin } = require("@opencensus/instrumentation-grpc");
+const { plugin } = require("@yamadayuki/instrumentation-grpc");
 const { StackdriverTraceExporter } = require("@yamadayuki/exporter-stackdriver");
 
 const tracer = setupTracerAndExporters();

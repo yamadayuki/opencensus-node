@@ -1,5 +1,5 @@
 {
-  "name": "@opencensus/instrumentation-ioredis",
+  "name": "@yamadayuki/instrumentation-ioredis",
   "version": "0.0.14-alpha.1",
   "private": true,
   "description": "Opencensus IORedis automatic instrumentation package.",

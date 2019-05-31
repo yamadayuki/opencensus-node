@@ -1,5 +1,5 @@
 {
-  "name": "@opencensus/instrumentation-mongodb",
+  "name": "@yamadayuki/instrumentation-mongodb",
   "version": "0.0.14-alpha.1",
   "private": true,
   "description": "Opencensus MongoDB automatic instrumentation package.",
