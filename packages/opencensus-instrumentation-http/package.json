@@ -1,7 +1,6 @@
 {
   "name": "@yamadayuki/instrumentation-http",
   "version": "0.0.14-alpha.2",
-  "private": true,
   "description": "Opencensus http automatic instrumentation package.",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
