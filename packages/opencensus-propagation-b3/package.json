@@ -1,6 +1,6 @@
 {
   "name": "@opencensus/propagation-b3",
-  "version": "0.0.14-alpha.3",
+  "version": "0.0.14-alpha.4",
   "private": true,
   "description": "Opencensus propagation package for B3 format.",
   "main": "build/src/index.js",
@@ -63,7 +63,7 @@
     "typescript": "~3.2.0"
   },
   "dependencies": {
-    "@yamadayuki/core": "^0.0.14-alpha.3",
+    "@yamadayuki/core": "^0.0.14-alpha.4",
     "uuid": "^3.2.1"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@yamadayuki/instrumentation-https",
-  "version": "0.0.14-alpha.3",
+  "version": "0.0.14-alpha.4",
   "description": "Opencensus https automatic instrumentation package.",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
@@ -65,8 +65,8 @@
     "typescript": "~2.9.0"
   },
   "dependencies": {
-    "@yamadayuki/core": "^0.0.14-alpha.3",
-    "@yamadayuki/instrumentation-http": "^0.0.14-alpha.3",
+    "@yamadayuki/core": "^0.0.14-alpha.4",
+    "@yamadayuki/instrumentation-http": "^0.0.14-alpha.4",
     "semver": "^6.0.0",
     "shimmer": "^1.2.0"
   }

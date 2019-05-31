@@ -1,6 +1,6 @@
 {
   "name": "@yamadayuki/instrumentation-mongodb",
-  "version": "0.0.14-alpha.3",
+  "version": "0.0.14-alpha.4",
   "description": "Opencensus MongoDB automatic instrumentation package.",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
@@ -64,7 +64,7 @@
     "typescript": "~2.9.0"
   },
   "dependencies": {
-    "@yamadayuki/core": "^0.0.14-alpha.3",
+    "@yamadayuki/core": "^0.0.14-alpha.4",
     "shimmer": "^1.2.0"
   }
 }
