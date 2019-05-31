@@ -54,7 +54,7 @@
     "typescript": "~3.2.0"
   },
   "dependencies": {
-    "@opencensus/instrumentation-all": "^0.0.14-alpha.1",
+    "@yamadayuki/instrumentation-all": "^0.0.14-alpha.1",
     "@yamadayuki/nodejs-base": "^0.0.14-alpha.1",
     "@yamadayuki/core": "^0.0.14-alpha.1"
   }

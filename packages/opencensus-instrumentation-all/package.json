@@ -1,5 +1,5 @@
 {
-  "name": "@opencensus/instrumentation-all",
+  "name": "@yamadayuki/instrumentation-all",
   "version": "0.0.14-alpha.1",
   "private": true,
   "description": "This package has dependencies to all default instrumentation packages.",
