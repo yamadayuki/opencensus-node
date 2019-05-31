@@ -1,6 +1,6 @@
 {
   "name": "@opencensus/exporter-zpages",
-  "version": "0.0.14-alpha.4",
+  "version": "0.0.14-alpha.5",
   "private": true,
   "description": "A collection of HTML pages to display stats and trace data and allow library configuration control",
   "main": "build/src/index.js",
@@ -56,7 +56,7 @@
     "@types/extend": "^3.0.0",
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.12",
-    "@yamadayuki/nodejs": "^0.0.14-alpha.4",
+    "@yamadayuki/nodejs": "^0.0.14-alpha.5",
     "axios": "^0.18.0",
     "codecov": "^3.4.0",
     "gts": "^0.9.0",
@@ -68,7 +68,7 @@
     "typescript": "~3.2.0"
   },
   "dependencies": {
-    "@yamadayuki/core": "^0.0.14-alpha.4",
+    "@yamadayuki/core": "^0.0.14-alpha.5",
     "ejs": "^2.5.8",
     "express": "^4.16.3"
   }

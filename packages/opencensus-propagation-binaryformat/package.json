@@ -1,6 +1,6 @@
 {
   "name": "@yamadayuki/propagation-binaryformat",
-  "version": "0.0.14-alpha.4",
+  "version": "0.0.14-alpha.5",
   "description": "Opencensus propagation package for binary format.",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
@@ -61,6 +61,6 @@
     "typescript": "~3.2.0"
   },
   "dependencies": {
-    "@yamadayuki/core": "^0.0.14-alpha.4"
+    "@yamadayuki/core": "^0.0.14-alpha.5"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@yamadayuki/nodejs",
-  "version": "0.0.14-alpha.4",
+  "version": "0.0.14-alpha.5",
   "description": "OpenCensus is a toolkit for collecting application performance and behavior data.",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
@@ -54,8 +54,8 @@
     "typescript": "~3.2.0"
   },
   "dependencies": {
-    "@yamadayuki/core": "^0.0.14-alpha.4",
-    "@yamadayuki/instrumentation-all": "^0.0.14-alpha.4",
-    "@yamadayuki/nodejs-base": "^0.0.14-alpha.4"
+    "@yamadayuki/core": "^0.0.14-alpha.5",
+    "@yamadayuki/instrumentation-all": "^0.0.14-alpha.5",
+    "@yamadayuki/nodejs-base": "^0.0.14-alpha.5"
   }
 }
