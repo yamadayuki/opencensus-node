@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import * as resource from '@opencensus/resource-util';
-import {CLOUD_RESOURCE, CONTAINER_RESOURCE, HOST_RESOURCE, K8S_RESOURCE} from '@opencensus/resource-util';
 import {Labels} from '@yamadayuki/core';
+import * as resource from '@yamadayuki/resource-util';
+import {CLOUD_RESOURCE, CONTAINER_RESOURCE, HOST_RESOURCE, K8S_RESOURCE} from '@yamadayuki/resource-util';
 
 import {MonitoredResource} from './types';
 
@@ -32,7 +32,7 @@ export async function getDefaultResource(projectId: string):
   const labels: Labels = {project_id: projectId};
   const autoDetectedResource = await resource.detectResource();
   const [type, mappings] = getTypeAndMappings(autoDetectedResource.type);
-  Object.keys(mappings).forEach((key) => {
+  Object.keys(mappings).forEach(key => {
     if (autoDetectedResource.labels[mappings[key]]) {
       if (type === AWS_EC2_INSTANCE &&
           mappings[key] === CLOUD_RESOURCE.REGION_KEY) {
@@ -51,33 +51,36 @@ function getTypeAndMappings(resourceType: string|null): [string, Labels] {
     case resource.GCP_GCE_INSTANCE_TYPE:
       // https://cloud.google.com/monitoring/api/resources#tag_gce_instance
       return [
-        GCP_GCE_INSTANCE, {
-          'project_id': STACKDRIVER_PROJECT_ID_KEY,
-          'instance_id': HOST_RESOURCE.ID_KEY,
-          'zone': CLOUD_RESOURCE.ZONE_KEY
-        }
+        GCP_GCE_INSTANCE,
+        {
+          project_id: STACKDRIVER_PROJECT_ID_KEY,
+          instance_id: HOST_RESOURCE.ID_KEY,
+          zone: CLOUD_RESOURCE.ZONE_KEY,
+        },
       ];
     case resource.K8S_CONTAINER_TYPE:
       // https://cloud.google.com/monitoring/api/resources#tag_k8s_container
       return [
-        K8S_CONTAINER, {
-          'project_id': STACKDRIVER_PROJECT_ID_KEY,
-          'location': CLOUD_RESOURCE.ZONE_KEY,
-          'cluster_name': K8S_RESOURCE.CLUSTER_NAME_KEY,
-          'namespace_name': K8S_RESOURCE.NAMESPACE_NAME_KEY,
-          'pod_name': K8S_RESOURCE.POD_NAME_KEY,
-          'container_name': CONTAINER_RESOURCE.NAME_KEY
-        }
+        K8S_CONTAINER,
+        {
+          project_id: STACKDRIVER_PROJECT_ID_KEY,
+          location: CLOUD_RESOURCE.ZONE_KEY,
+          cluster_name: K8S_RESOURCE.CLUSTER_NAME_KEY,
+          namespace_name: K8S_RESOURCE.NAMESPACE_NAME_KEY,
+          pod_name: K8S_RESOURCE.POD_NAME_KEY,
+          container_name: CONTAINER_RESOURCE.NAME_KEY,
+        },
       ];
     case resource.AWS_EC2_INSTANCE_TYPE:
       // https://cloud.google.com/monitoring/api/resources#tag_aws_ec2_instance
       return [
-        AWS_EC2_INSTANCE, {
-          'project_id': STACKDRIVER_PROJECT_ID_KEY,
-          'instance_id': HOST_RESOURCE.ID_KEY,
-          'region': CLOUD_RESOURCE.REGION_KEY,
-          'aws_account': CLOUD_RESOURCE.ACCOUNT_ID_KEY
-        }
+        AWS_EC2_INSTANCE,
+        {
+          project_id: STACKDRIVER_PROJECT_ID_KEY,
+          instance_id: HOST_RESOURCE.ID_KEY,
+          region: CLOUD_RESOURCE.REGION_KEY,
+          aws_account: CLOUD_RESOURCE.ACCOUNT_ID_KEY,
+        },
       ];
     default:
       return ['global', {}];
