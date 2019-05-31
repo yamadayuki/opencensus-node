@@ -1,6 +1,6 @@
 {
   "name": "@yamadayuki/instrumentation-all",
-  "version": "0.0.14-alpha.1",
+  "version": "0.0.14-alpha.2",
   "private": true,
   "description": "This package has dependencies to all default instrumentation packages.",
   "main": "src/index.js",
@@ -39,12 +39,12 @@
     "access": "public"
   },
   "dependencies": {
-    "@yamadayuki/instrumentation-grpc": "^0.0.14-alpha.1",
-    "@yamadayuki/instrumentation-http": "^0.0.14-alpha.1",
-    "@yamadayuki/instrumentation-http2": "^0.0.14-alpha.1",
-    "@yamadayuki/instrumentation-https": "^0.0.14-alpha.1",
-    "@yamadayuki/instrumentation-ioredis": "^0.0.14-alpha.1",
-    "@yamadayuki/instrumentation-mongodb": "^0.0.14-alpha.1",
-    "@yamadayuki/instrumentation-redis": "^0.0.14-alpha.1"
+    "@yamadayuki/instrumentation-grpc": "^0.0.14-alpha.2",
+    "@yamadayuki/instrumentation-http": "^0.0.14-alpha.2",
+    "@yamadayuki/instrumentation-http2": "^0.0.14-alpha.2",
+    "@yamadayuki/instrumentation-https": "^0.0.14-alpha.2",
+    "@yamadayuki/instrumentation-ioredis": "^0.0.14-alpha.2",
+    "@yamadayuki/instrumentation-mongodb": "^0.0.14-alpha.2",
+    "@yamadayuki/instrumentation-redis": "^0.0.14-alpha.2"
   }
 }
